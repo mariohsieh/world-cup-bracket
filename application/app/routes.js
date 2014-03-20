@@ -4,21 +4,26 @@ module.exports = function(app) {
 		// handle things like api calls
 		// authentication routes
 		// sample api route
-
-	
+ 		var nations = require('./models/nations.js');
+		//nations.groupDisplay("A");
+		//nations.allDisplay(); 
+		var test = {'hello' : "there"};
 	//// front-end routes ////
-
-	// index page
-	app.get('/', function(req, res) {
+	// configure routes on front-end with routeProvider
+	app.get('*', function(req, res) {
 		//res.type('text/plain');
 		//res.send('Hello World!');
 		res.sendfile('./public/index.html');
+		res.render('./public/index', {
+			//alpha: test
+		})
 	});
-
-	//	error pages
-	app.get('*', function(req, res){
+/*
+	//	error page
+	app.use(function(req, res){
 		res.type('text/plain');
-		res.send('Page Not Found', 404);
+		res.send(404, 'Page Not Found');
 	});
+*/
 }
 
