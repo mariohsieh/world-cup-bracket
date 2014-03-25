@@ -1,3 +1,27 @@
-<h1>Fill out a bracket!</h1>
+<section class="row">
+	<h1>Group Stage</h1>
 
-<p>{{ output }}</p>
+	<p>{{ description }}</p>
+</section>
+
+<section class="row">
+	<div class="col-xs-3">
+		<ul>
+			<li ng-repeat="group in groups" id="{{ group }}" ng-click="selectgroup(group)">{{ group }}</li>
+		</ul>	
+	</div>
+	<div class="col-xs-5">
+		<!-- list group nations here -->
+		<ul>
+			<li ng-repeat="team in teams" id="{{ team }}" ng-click="nations.moreinfo(team)">{{ team.name }}</li>
+			<!-- <li>hello there</li> -->
+		</ul>
+	</div>
+	<div class="col-xs-4">
+		<!-- list winners here -->
+		<ul>
+			<li>winner 1</li>
+			<li>winner 2</li>
+		</ul>
+	</div>
+</section>
