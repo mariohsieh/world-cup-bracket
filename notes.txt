@@ -63,9 +63,35 @@ view:
 		-display all submitted brackets and leaders
 		-need to write algorithm for determining point score
 
+///// db notes ///////
 
+// testing access to db
+var query = {"group" : "A" };
 
+db.collection('nations').find(query, function(err, doc) {
+	if(err) throw err;
 	
+	console.dir(doc);
+	
+	db.close();
+});
+	
+using mongoose
+
+// create the Schema
+var UserSchema = new mongoose.Schema({
+	name: String,
+	email: String,
+	age: Number
+}),
+	Users = mongoose.model('Users', UserSchema);
+	
+// retrieve all documents 
+app.get("/users", function (req, res) {
+	Users.find(}, function (err, doc) {
+		res.render('users/index', {users: doc})
+	});
+});	
 
 
 

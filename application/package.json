@@ -11,6 +11,8 @@
 	"main": "app.js",
 	"dependencies": {
 		"express": "latest",
+		"swig": "latest",
+		"consolidate" : "latest",
 		"mongodb": "latest",
 		"mongoose": "latest"
 	}

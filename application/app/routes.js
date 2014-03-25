@@ -1,22 +1,34 @@
+// load Brackets model
+//var Nation = require('./models/nation');
+var Bracket = require('./models/bracket');
+
 module.exports = function(app) {
 	
-	//// server routes ////
-		// handle things like api calls
-		// authentication routes
-		// sample api route
- 		var nations = require('./models/nations.js');
-		//nations.groupDisplay("A");
-		//nations.allDisplay(); 
-		var test = {'hello' : "there"};
-	//// front-end routes ////
-	// configure routes on front-end with routeProvider
+	// define RESTful api   ***********************************
+/*	
+	// for brackets
+	app.get('/brackets', function(req,res) {
+		// grab all brackets from db
+		Bracket.find(function(err,doc) {
+			if (err) throw err;
+			res.json(doc);
+		});
+	});
+*/
+
+/*
+	// create new brackets
+	app.post('/new', function(req,res) {
+		Nation.find(function(err,doc) {
+			if (err) throw err;
+			res.json(doc);
+		});
+	});
+*/	
+
+	// send all routes to angular front end to be defined
 	app.get('*', function(req, res) {
-		//res.type('text/plain');
-		//res.send('Hello World!');
 		res.sendfile('./public/index.html');
-		res.render('./public/index', {
-			//alpha: test
-		})
 	});
 /*
 	//	error page

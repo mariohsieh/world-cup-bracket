@@ -28,7 +28,7 @@ db named "worldcup":
 		-name
 		-team
 		-score
-		-
+		-created_at
 		
 
 controller:
