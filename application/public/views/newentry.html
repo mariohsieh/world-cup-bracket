@@ -28,7 +28,8 @@
 			<!-- <li ng-show="!gfirst">First Place</li> -->
 			<li>{{ gfirst }}</li>
 			<li>{{ gsecond }}</li>
-			<li ng-show="gsecond" ng-click="clearWinners(groupLetter)">Clear</li>
+			<li ng-show="gsecond != 'Second Place'" ng-click="clearWinners(groupLetter)">Clear</li>
 		</ul>
+		<div ng-show="knockoutStage()">Next Stage >></div>
 	</div>
 </section>

@@ -18,6 +18,10 @@ angular.module("NewCtrl", [])
 			// default to group A onload
 			$scope.teams = $scope.nations.getGroup('A');
 			$scope.groupLetter = 'A';
+			firstPlace = "First Place";
+			secondPlace = "Second Place";
+			$scope.gfirst = firstPlace;
+			$scope.gsecond = secondPlace;
 		}
 		
 		//// define $scope functions ////
@@ -31,11 +35,11 @@ angular.module("NewCtrl", [])
 			if (picks[str+1])
 				$scope.gfirst = picks[str+1]["name"];
 			else
-				$scope.gfirst = "";
+				$scope.gfirst =  firstPlace;
 			if (picks[str+2])
 				$scope.gsecond = picks[str+2]["name"];
 			else
-				$scope.gsecond = "";
+				$scope.gsecond = secondPlace;
 		}
 
 		// choose group winners
@@ -55,18 +59,24 @@ angular.module("NewCtrl", [])
 				//picks[obj.group+2] = obj.code;
 				$scope.gsecond = obj.name;
 			}
-			console.log(picks);
+			//console.log(picks);
 			//console.log(Object.keys(picks).length);
 		}
 
 		// remove winners for specified group
 		$scope.clearWinners = function(str) {
 			//console.log(str);
-			$scope.gfirst = "";
+			$scope.gfirst = firstPlace;
 			delete picks[str+1];
-			$scope.gsecond = "";
+			$scope.gsecond = secondPlace;
 			delete picks[str+2];
 			console.log(picks);
+		}
+		
+		$scope.knockoutStage = function() {
+			if (Object.keys(picks).length == "16")
+				return true;
+			return false;
 		}
 		
 		initial();
