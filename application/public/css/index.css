@@ -1,7 +1,34 @@
+/* resets */
+html, body, ul, li {
+	margin: 0px;
+	padding: 0px;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
 .container {
-	margin-top: 70px;
+	margin-top: 55px;
+}
+
+nav {
+	/*font-variant: small-caps;*/
+}
+
+span {
+	font-size: .5em;
+	vertical-align: middle;
 }
 
 li {
-	list-style-type: none;
+	list-style: none;
+}
+
+img {
+	width: 75px;
 }

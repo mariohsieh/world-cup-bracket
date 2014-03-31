@@ -8,7 +8,7 @@ angular.module('nationService',[])
 		Nations.list = [
 			{
 				"_id": 1,
-				"code" : "BRA",
+				"code" : "bra",
 				"name" : "Brazil",
 				"nickname" : "A Seleção (The Selection)",
 				"ranking" : 9,
@@ -22,7 +22,7 @@ angular.module('nationService',[])
 			},
 			{
 				"_id": 2,
-				"code" : "CRO",
+				"code" : "cro",
 				"name" : "Croatia",
 				"nickname" : "Vatreni (The Blazers)",
 				"ranking" : 16,
@@ -36,7 +36,7 @@ angular.module('nationService',[])
 			},
 			{
 				"_id": 3,
-				"code" : "MEX",
+				"code" : "mex",
 				"name" : "Mexico",
 				"nickname" : "El Tricolor",
 				"ranking" : 20,
@@ -50,7 +50,7 @@ angular.module('nationService',[])
 			},
 			{
 				"_id": 4,
-				"code" : "CMR",
+				"code" : "cmr",
 				"name" : "Cameroon",
 				"nickname" : "Les Lions Indomptables (The Indomitable Lions)",
 				"ranking" : 59,
@@ -64,7 +64,7 @@ angular.module('nationService',[])
 			},
 			{
 				"_id": 5,
-				"code" : "ESP",
+				"code" : "esp",
 				"name" : "Spain",
 				"nickname" : "La Furia Roja (The Red Fury)",
 				"ranking" : 1,
@@ -78,7 +78,7 @@ angular.module('nationService',[])
 			},
 			{
 				"_id": 6,
-				"code" : "NED",
+				"code" : "ned",
 				"name" : "Netherlands",
 				"nickname" : "Oranje",
 				"ranking" : 10,
@@ -92,7 +92,7 @@ angular.module('nationService',[])
 			},
 			{
 				"_id": 7,
-				"code" : "CHI",
+				"code" : "chi",
 				"name" : "Chile",
 				"nickname" : "La Roja (The Red One)",
 				"ranking" : 15,
@@ -106,7 +106,7 @@ angular.module('nationService',[])
 			},
 			{
 				"_id": 8,
-				"code" : "AUS",
+				"code" : "aus",
 				"name" : "Australia",
 				"nickname" : "SOCCEROOS",
 				"ranking" : 53,
@@ -120,7 +120,7 @@ angular.module('nationService',[])
 			},
 			{
 				"_id": 9,
-				"code" : "COL",
+				"code" : "col",
 				"name" : "Colombia",
 				"nickname" : "Los Cafeteros (The Coffee Growers)",
 				"ranking" : 5,
@@ -134,7 +134,7 @@ angular.module('nationService',[])
 			},
 			{
 				"_id": 10,
-				"code" : "GRE",
+				"code" : "gre",
 				"name" : "Greece",
 				"nickname" : "Το Πειρατικό (To Piratiko)",
 				"ranking" : 12,
@@ -148,7 +148,7 @@ angular.module('nationService',[])
 			},
 			{
 				"_id": 11,
-				"code" : "CIV",
+				"code" : "civ",
 				"name" : "Ivory Coast",
 				"nickname" : "Les Éléphants (The Elephants)",
 				"ranking" : 17,
@@ -162,7 +162,7 @@ angular.module('nationService',[])
 			},
 			{
 				"_id": 12,
-				"code" : "JPN",
+				"code" : "jpn",
 				"name" : "Japan",
 				"nickname" : "サムライ・ブルー (Samurai Blue)",
 				"ranking" : 50,
@@ -176,7 +176,7 @@ angular.module('nationService',[])
 			},
 			{
 				"_id": 13,
-				"code" : "URU",
+				"code" : "uru",
 				"name" : "Uruguay",
 				"nickname" : "La Celeste (The Sky Blue [One])",
 				"ranking" : 7,
@@ -190,7 +190,7 @@ angular.module('nationService',[])
 			},
 			{
 				"_id": 14,
-				"code" : "CRC",
+				"code" : "crc",
 				"name" : "Costa Rica",
 				"nickname" : "Los Ticos",
 				"ranking" : 35,
@@ -204,7 +204,7 @@ angular.module('nationService',[])
 			},
 			{
 				"_id": 15,
-				"code" : "ENG",
+				"code" : "eng",
 				"name" : "England",
 				"nickname" : "The Three Lions",
 				"ranking" : 15,
@@ -218,7 +218,7 @@ angular.module('nationService',[])
 			},
 			{
 				"_id": 16,
-				"code" : "ITA",
+				"code" : "ita",
 				"name" : "Italy",
 				"nickname" : "Azzurri (The Blues)",
 				"ranking" : 8,
@@ -232,7 +232,7 @@ angular.module('nationService',[])
 			},
 			{ 
 				"_id": 17,
-				"code" : "SUI",
+				"code" : "sui",
 				"name" : "Switzerland",
 				"nickname" : "Schweizer Nati, La Nati, Squadra Nazionale",
 				"ranking" : 6,
@@ -246,7 +246,7 @@ angular.module('nationService',[])
 			},
 			{ 
 				"_id": 18,
-				"code" : "ECU",
+				"code" : "ecu",
 				"name" : "Ecuador",
 				"nickname" : "La Tri (Tri-color)",
 				"ranking" : 24,
@@ -260,7 +260,7 @@ angular.module('nationService',[])
 			},
 			{ 
 				"_id": 19,
-				"code" : "FRA",
+				"code" : "fra",
 				"name" : "France",
 				"nickname" : "Les Bleus (The Blues)",
 				"ranking" : 19,
@@ -274,7 +274,7 @@ angular.module('nationService',[])
 			},
 			{
 				"_id": 20,
-				"code" : "HON",
+				"code" : "hon",
 				"name" : "Honduras",
 				"nickname" : "Los Catrachos",
 				"ranking" : 40,
@@ -288,7 +288,7 @@ angular.module('nationService',[])
 			},
 			{
 				"_id": 21,
-				"code" : "ARG",
+				"code" : "arg",
 				"name" : "Argentina",
 				"nickname" : "La Albiceleste (The White and Sky Blue)",
 				"ranking" : 3,
@@ -302,7 +302,7 @@ angular.module('nationService',[])
 			},
 			{ 
 				"_id": 22,
-				"code" : "BIH",
+				"code" : "bih",
 				"name" : "Bosnia and Herzegovina",
 				"nickname" : "Zmajevi (Dragons)",
 				"ranking" : 17,
@@ -316,7 +316,7 @@ angular.module('nationService',[])
 			},
 			{
 				"_id": 23,
-				"code" : "IRN",
+				"code" : "irn",
 				"name" : "Iran",
 				"nickname" : "شیران ایران (Shirane Iran - The Iranian Lions)",
 				"ranking" : 38,
@@ -330,7 +330,7 @@ angular.module('nationService',[])
 			},
 			{ 
 				"_id": 24,
-				"code" : "NGA",
+				"code" : "nga",
 				"name" : "Nigeria",
 				"nickname" : "Super Eagles",
 				"ranking" : 41,
@@ -344,7 +344,7 @@ angular.module('nationService',[])
 			},
 			{ 
 				"_id": 25,
-				"code" : "GER",
+				"code" : "ger",
 				"name" : "Germany",
 				"nickname" : "Nationalelf (The Team)",
 				"ranking" : 2,
@@ -358,7 +358,7 @@ angular.module('nationService',[])
 			},
 			{ 
 				"_id": 26,
-				"code" : "POR",
+				"code" : "por",
 				"name" : "Portugal",
 				"nickname" : "Selecção das Quinas (National Team of the Shields)",
 				"ranking" : 4,
@@ -372,7 +372,7 @@ angular.module('nationService',[])
 			},
 			{ 
 				"_id": 27,
-				"code" : "GHA",
+				"code" : "gha",
 				"name" : "Ghana",
 				"nickname" : "Black Stars",
 				"ranking" : 37,
@@ -386,7 +386,7 @@ angular.module('nationService',[])
 			},
 			{ 
 				"_id": 28,
-				"code" : "USA",
+				"code" : "usa",
 				"name" : "United States of America",
 				"nickname" : "The Stars and Stripes",
 				"ranking" : 13,
@@ -400,7 +400,7 @@ angular.module('nationService',[])
 			},
 			{ 
 				"_id": 29,
-				"code" : "BEL",
+				"code" : "bel",
 				"name" : "Belgium",
 				"nickname" : "Rote Teufel (Red Devils)",
 				"ranking" : 11,
@@ -414,7 +414,7 @@ angular.module('nationService',[])
 			},
 			{ 
 				"_id": 30,
-				"code" : "ALG",
+				"code" : "alg",
 				"name" : "Algeria",
 				"nickname" : "الأفناك (Fennec Foxes)",
 				"ranking" : 26,
@@ -428,7 +428,7 @@ angular.module('nationService',[])
 			},
 			{ 
 				"_id": 31,
-				"code" : "RUS",
+				"code" : "rus",
 				"name" : "Russia",
 				"nickname" : "Sbornaya (The National Team)",
 				"ranking" : 22,
@@ -442,7 +442,7 @@ angular.module('nationService',[])
 			},
 			{ 
 				"_id": 32,
-				"code" : "KOR",
+				"code" : "kor",
 				"name" : "South Korea",
 				"nickname" : "태극전사 (Taegeuk Warriors)",
 				"ranking" : 53,
@@ -457,7 +457,7 @@ angular.module('nationService',[])
 		];
 		
 		// select group
-		Nations.getgroup = function(data) {
+		Nations.getGroup = function(data) {
 			var length = Nations.list.length;
 			var teams = [];
 			for (var i = 0;i<length;i++) {
