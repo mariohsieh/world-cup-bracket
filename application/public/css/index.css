@@ -39,8 +39,17 @@ img {
 
 /***** bracket styling *****/
 .bracketWrap {
-	width: 750px;
+	width: 600px;
 	height: 512px;
+	display: inline-block;
+}
+
+.champions {
+	width: 150px;
+	height: 512px;
+	line-height: 32em;
+	/*vertical-align: sub;*/
+	display: inline-block;
 }
 
 .bracketBottomLine {
@@ -56,6 +65,7 @@ img {
 	border-right: 1px solid #000000;
 }
 
+/* rounds */
 .roundFinalsWrap {
 	height: 256px;
 	width: 600px;
@@ -76,6 +86,7 @@ img {
 	width: 150px;
 }
 
+/* winners line */
 .sweetsixteen {
 	height: inherit;
 	width: 150px;
@@ -85,25 +96,17 @@ img {
 .quarterfinals {
 	height: inherit;
 	width: 150px;
-	display: table-cell;
 	line-height: 6em;
 }
 
 .semifinals {
-	width: 150px;
 	height: inherit;
+	width: 150px;
 	line-height: 14em;
 }
 
 .finals {
-	width: 150px;
 	height: inherit;
-	line-height: 30em;
-}
-
-.champions {
 	width: 150px;
-	height: 512px;
-	line-height: 32em;
-	/*vertical-align: sub;*/
+	line-height: 30em;
 }

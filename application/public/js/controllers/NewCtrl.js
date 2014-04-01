@@ -24,14 +24,20 @@ angular.module("NewCtrl", [])
 			$scope.gsecond = secondPlace;
 			
 			// display sections
-			$scope.groupShow = false;
-			$scope.koShow = true;
+			//$scope.tourneyRound = "groupStage";
+			//console.log($scope.tourneyRound);
+			
+			// testing settings
+			$scope.bracketLeft = false;
+			$scope.tourneyRound = "koStage";
 		}
 		
 		// set initial parameters on knockout stage enter
 		function initialKO() {
+			console.log($scope.tourneyRound);
 			$scope.picks = picks;
 			//console.log($scope.picks["A1"]["name"]);
+			$scope.bracketLeft = true;
 		}
 		
 		//// define $scope functions ////
@@ -91,8 +97,9 @@ angular.module("NewCtrl", [])
 		}
 		
 		$scope.gotoKOStage = function() {
-			$scope.koShow = true;
-			$scope.groupShow = false;
+			//$scope.koShow = true;
+			//$scope.groupShow = false;
+			$scope.tourneyRound = "koStage";
 			
 			$scope.heading = "Knockout Stage";
 			$scope.description = "Please fill out the bracket";
