@@ -1,8 +1,8 @@
 <section class="row">
-	<h1>{{ heading }}&nbsp;<span><em>{{ description }}</em></span></h1>
+	<h1>{{ heading }}&nbsp;<span class="pageDescription"><em>{{ description }}</em></span></h1>
 </section>
 
-<section class="row">
+<section ng-show="groupShow" class="row">
 	<div class="col-xs-1">
 		<ul>
 			<!-- list groups here -->
@@ -23,13 +23,117 @@
 	</div>
 	<div class="col-xs-3 col-xs-offset-1">
 		<!-- list winners here -->
-		<h3>Group {{ groupLetter }} Winners</h3>
+		<h2>Group {{ groupLetter }} Winners</h3>
 		<ul>
 			<!-- <li ng-show="!gfirst">First Place</li> -->
-			<li>{{ gfirst }}</li>
-			<li>{{ gsecond }}</li>
-			<li ng-show="gsecond != 'Second Place'" ng-click="clearWinners(groupLetter)">Clear</li>
+			<li><h3>{{ gfirst }}</h3></li>
+			<li><h3>{{ gsecond }}</h3></li>
+			<li ng-show="gsecond != 'Second Place'" ng-click="clearWinners(groupLetter)"><h4>Clear</h4></li>
 		</ul>
-		<div ng-show="knockoutStage()">Next Stage >></div>
+		<div ng-show="koStageCheck()" ng-click="gotoKOStage()">Next Stage >></div>
 	</div>
 </section>
+<section ng-show="koShow" class="row text-center bracketWrap">
+<!--
+	<nav>
+		<ul>
+			<li ng-repeat="round in rounds"></li>
+		</ul>
+-->		
+	</nav>
+	<div class="champions pull-right">champions</div>
+	<div class="roundFinalsWrap">
+		<div class="finals pull-right bracketBottomLine">finals</div>
+		<div class="roundSemiWrap">
+			<div class="semifinals pull-right bracketBottomLine">semifinals</div>
+			<div class="roundQuarterWrap">
+				<div class="quarterfinals pull-right bracketBottomLine">quarterfinals</div>
+				<div class="roundSweetWrap">
+					<div class="sweetsixteen bracketBottomLine">{{picks.A1.name}}</div>
+				</div>
+				<div class="roundSweetWrap bracketRightLine">
+				</div>
+			</div>
+			<div class="roundQuarterWrap bracketRightLine">
+				<div class="quarterfinals pull-right"></div>
+				<div class="roundSweetWrap bracketRightLine">
+					<div class="sweetsixteen bracketBottomLine">{{picks.B2.name}}</div>
+				</div>
+				<div class="roundSweetWrap"></div>
+			</div>
+		</div>
+		<div class="roundSemiWrap bracketRightLine">
+			<div class="quarterfinals pull-right"></div>
+			<div class="roundQuarterWrap bracketRightLine">
+				<div class="quarterfinals pull-right bracketBottomLine"></div>
+				<div class="roundSweetWrap">
+					<div class="sweetsixteen bracketBottomLine"></div>
+				</div>
+				<div class="roundSweetWrap bracketRightLine">
+				</div>
+			</div>
+			<div class="roundQuarterWrap">
+				<div class="quarterfinals pull-right"></div>
+				<div class="roundSweetWrap bracketRightLine">
+					<div class="sweetsixteen bracketBottomLine"></div>
+				</div>
+				<div class="roundSweetWrap"></div>
+			</div>
+		</div>
+	</div>
+	<div class="roundFinalsWrap">
+		<div class="finals pull-right"></div>
+		<div class="roundSemiWrap bracketRightLine">
+			<div class="semifinals pull-right bracketBottomLine"></div>
+			<div class="roundQuarterWrap">
+				<div class="quarterfinals pull-right bracketBottomLine"></div>
+				<div class="roundSweetWrap">
+					<div class="sweetsixteen bracketBottomLine"></div>
+				</div>
+				<div class="roundSweetWrap bracketRightLine">
+				</div>
+			</div>
+			<div class="roundQuarterWrap bracketRightLine">
+				<div class="quarterfinals pull-right"></div>
+				<div class="roundSweetWrap bracketRightLine">
+					<div class="sweetsixteen bracketBottomLine"></div>
+				</div>
+				<div class="roundSweetWrap">
+				</div>
+			</div>
+		</div>
+		<div class="roundSemiWrap">
+			<div class="semifinals pull-right"></div>
+			<div class="roundQuarterWrap bracketRightLine">
+				<div class="quarterfinals pull-right bracketBottomLine"></div>
+				<div class="roundSweetWrap">
+					<div class="sweetsixteen bracketBottomLine"></div>
+				</div>
+				<div class="roundSweetWrap bracketRightLine"></div>
+			</div>
+			<div class="roundQuarterWrap">
+				<div class="quarterfinals pull-right"></div>
+				<div class="roundSweetWrap bracketRightLine">
+					<div class="sweetsixteen bracketBottomLine"></div>
+				</div>
+				<div class="roundSweetWrap"></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

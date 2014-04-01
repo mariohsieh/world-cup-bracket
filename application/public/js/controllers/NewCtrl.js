@@ -2,7 +2,7 @@ angular.module("NewCtrl", [])
 
 	.controller("NewController", function($scope, Nations) {
 		
-		// set initial parameters on page enter
+		// set initial parameters on group stage enter
 		function initial() {
 			// page title and description
 			$scope.heading = "Group Stage";
@@ -22,6 +22,16 @@ angular.module("NewCtrl", [])
 			secondPlace = "Second Place";
 			$scope.gfirst = firstPlace;
 			$scope.gsecond = secondPlace;
+			
+			// display sections
+			$scope.groupShow = false;
+			$scope.koShow = true;
+		}
+		
+		// set initial parameters on knockout stage enter
+		function initialKO() {
+			$scope.picks = picks;
+			//console.log($scope.picks["A1"]["name"]);
 		}
 		
 		//// define $scope functions ////
@@ -73,10 +83,21 @@ angular.module("NewCtrl", [])
 			console.log(picks);
 		}
 		
-		$scope.knockoutStage = function() {
+		// check to see picks for all groups are complete
+		$scope.koStageCheck = function() {
 			if (Object.keys(picks).length == "16")
 				return true;
 			return false;
+		}
+		
+		$scope.gotoKOStage = function() {
+			$scope.koShow = true;
+			$scope.groupShow = false;
+			
+			$scope.heading = "Knockout Stage";
+			$scope.description = "Please fill out the bracket";
+			
+			initialKO();	
 		}
 		
 		initial();

@@ -16,11 +16,11 @@ html, body, ul, li {
 	margin-top: 55px;
 }
 
-nav {
+#mainNav {
 	/*font-variant: small-caps;*/
 }
 
-span {
+.pageDescription {
 	font-size: .5em;
 	vertical-align: middle;
 }
@@ -31,4 +31,79 @@ li {
 
 img {
 	width: 75px;
+}
+
+.koText {
+	vertical-align: bottom;
+}
+
+/***** bracket styling *****/
+.bracketWrap {
+	width: 750px;
+	height: 512px;
+}
+
+.bracketBottomLine {
+	border-bottom: 1px solid #000000;
+	/*vertical-align:	-20px;*/
+}
+
+.bracketLeftLine {
+	border-left: 1px solid #000000;
+}
+
+.bracketRightLine {
+	border-right: 1px solid #000000;
+}
+
+.roundFinalsWrap {
+	height: 256px;
+	width: 600px;
+}
+
+.roundSemiWrap {
+	height: 128px;
+	width: 450px;
+}
+
+.roundQuarterWrap {
+	height: 64px;
+	width: 300px;
+}
+
+.roundSweetWrap {
+	height: 32px;
+	width: 150px;
+}
+
+.sweetsixteen {
+	height: inherit;
+	width: 150px;
+	line-height: 2em;
+}
+
+.quarterfinals {
+	height: inherit;
+	width: 150px;
+	display: table-cell;
+	line-height: 6em;
+}
+
+.semifinals {
+	width: 150px;
+	height: inherit;
+	line-height: 14em;
+}
+
+.finals {
+	width: 150px;
+	height: inherit;
+	line-height: 30em;
+}
+
+.champions {
+	width: 150px;
+	height: 512px;
+	line-height: 32em;
+	/*vertical-align: sub;*/
 }
