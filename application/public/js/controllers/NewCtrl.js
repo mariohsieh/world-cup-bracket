@@ -18,14 +18,13 @@ angular.module("NewCtrl", [])
 			// default to group A onload
 			$scope.teams = $scope.nations.getGroup('A');
 			$scope.groupLetter = 'A';
+
+			// set variables for group stage
 			firstPlace = "First Place";
 			secondPlace = "Second Place";
 			$scope.gfirst = firstPlace;
 			$scope.gsecond = secondPlace;
-			
-			// display sections
 			$scope.tourneyRound = "groupStage";
-			//console.log($scope.tourneyRound);
 			
 			// testing settings
 			//$scope.bracketLeft = false;
@@ -107,6 +106,12 @@ angular.module("NewCtrl", [])
 				$scope.indicator = '<';
 			else 
 				$scope.indicator = '>';
+		}
+		
+		// choose winner for next round
+		$scope.selectWinner = function(str1,str2) {
+			$scope.picks[str2] = $scope.picks[str1];
+			//console.log($scope.picks);
 		}
 		
 		initial();

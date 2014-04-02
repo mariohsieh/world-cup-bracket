@@ -88,7 +88,7 @@ img {
 	width: 200px;
 }
 
-/* winners line */
+/* team display */
 .winnersLine {
 	height: inherit;
 	width: 200px;
@@ -108,4 +108,9 @@ img {
 
 .finals {
 	line-height: 38em;
+}
+
+.teamDisplay {
+	font-size: 1.2em;
+	cursor: pointer;
 }
