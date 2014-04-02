@@ -1,5 +1,13 @@
 angular.module("NewCtrl", [])
 
+	.filter('reverse', function() {
+		return function(items) {
+			//console.log(items);
+			return items.slice().reverse();
+			//return items;
+		};
+	})
+	
 	.controller("NewController", function($scope, Nations) {
 		
 		// set initial parameters on group stage enter
@@ -26,9 +34,13 @@ angular.module("NewCtrl", [])
 			$scope.gsecond = secondPlace;
 			$scope.tourneyRound = "groupStage";
 			
+			// must set this here cuz of filter
+			$scope.rounds = ["Sweet Sixteen", "Quarter-Finals", "Semi-Finals", "Finals"];
+			
 			// testing settings
 			//$scope.bracketLeft = false;
 			//$scope.tourneyRound = "koStage";
+
 		}
 		
 		// set initial parameters on knockout stage enter
@@ -36,6 +48,11 @@ angular.module("NewCtrl", [])
 			$scope.picks = picks;
 			$scope.bracketLeft = true;
 			$scope.indicator = '>';
+			//$scope.indicator = 'right';
+			
+			//$scope.rounds = ["Sweet Sixteen", "Quarter-Finals", "Semi-Finals", "Finals"];
+
+			//console.log($scope.rounds);
 		}
 		
 		//// define $scope functions ////
@@ -102,10 +119,16 @@ angular.module("NewCtrl", [])
 		// switch sides of bracket
 		$scope.bracketSwitch = function() {
 			$scope.bracketLeft = !$scope.bracketLeft;
+/*
+			if ($scope.indicator == 'right')
+				$scope.indicator = 'left';
+			else 
+				$scope.indicator = 'right';
+*/ 
 			if ($scope.indicator == '>')
 				$scope.indicator = '<';
 			else 
-				$scope.indicator = '>';
+				$scope.indicator = '>'; 
 		}
 		
 		// choose winner for next round
@@ -116,8 +139,6 @@ angular.module("NewCtrl", [])
 		
 		initial();
 	});
-
-
 
 
 

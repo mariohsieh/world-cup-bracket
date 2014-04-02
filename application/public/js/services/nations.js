@@ -387,7 +387,7 @@ angular.module('nationService',[])
 			{ 
 				"_id": 28,
 				"code" : "usa",
-				"name" : "United States of America",
+				"name" : "United States",
 				"nickname" : "The Stars and Stripes",
 				"ranking" : 13,
 				"history" : {
