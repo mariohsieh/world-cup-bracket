@@ -24,20 +24,19 @@ angular.module("NewCtrl", [])
 			$scope.gsecond = secondPlace;
 			
 			// display sections
-			//$scope.tourneyRound = "groupStage";
+			$scope.tourneyRound = "groupStage";
 			//console.log($scope.tourneyRound);
 			
 			// testing settings
-			$scope.bracketLeft = false;
-			$scope.tourneyRound = "koStage";
+			//$scope.bracketLeft = false;
+			//$scope.tourneyRound = "koStage";
 		}
 		
 		// set initial parameters on knockout stage enter
 		function initialKO() {
-			console.log($scope.tourneyRound);
 			$scope.picks = picks;
-			//console.log($scope.picks["A1"]["name"]);
 			$scope.bracketLeft = true;
+			$scope.indicator = '>';
 		}
 		
 		//// define $scope functions ////
@@ -62,17 +61,10 @@ angular.module("NewCtrl", [])
 		$scope.groupWinner = function(obj) {
 			//console.log(obj);
 			if (!picks[obj.group+1]) {	// if pick 1 not set
-			
 				picks[obj.group+1] = {"code": obj.code, "name": obj.name};
-				
-				//picks[obj.group+1] = obj.code;
-				//picks[obj.group+1]["name"] = obj.name;
 				$scope.gfirst = obj.name;
-				//$scope.gsecond = "";
-				//picks[team.group+2] = $scope.gsecond;
 			} else if (obj.code != picks[obj.group+1]["code"] && !picks[obj.group+2]) { // pick 2 is blank and picked team is not pick 1
 				picks[obj.group+2] = {"code": obj.code, "name": obj.name};
-				//picks[obj.group+2] = obj.code;
 				$scope.gsecond = obj.name;
 			}
 			//console.log(picks);
@@ -96,6 +88,7 @@ angular.module("NewCtrl", [])
 			return false;
 		}
 		
+		// button click for KO stage
 		$scope.gotoKOStage = function() {
 			//$scope.koShow = true;
 			//$scope.groupShow = false;
@@ -107,5 +100,28 @@ angular.module("NewCtrl", [])
 			initialKO();	
 		}
 		
+		// switch sides of bracket
+		$scope.bracketSwitch = function() {
+			$scope.bracketLeft = !$scope.bracketLeft;
+			if ($scope.indicator == '>')
+				$scope.indicator = '<';
+			else 
+				$scope.indicator = '>';
+		}
+		
 		initial();
 	});
+
+
+
+
+
+
+
+
+
+
+
+
+
+

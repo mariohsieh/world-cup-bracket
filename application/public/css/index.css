@@ -37,24 +37,26 @@ img {
 	vertical-align: bottom;
 }
 
+.arrow {
+	font-size: 10em;
+}
+
 /***** bracket styling *****/
 .bracketWrap {
-	width: 600px;
-	height: 512px;
+	width: 800px;
+	height: 640px;
 	display: inline-block;
 }
 
 .champions {
-	width: 150px;
-	height: 512px;
-	line-height: 32em;
-	/*vertical-align: sub;*/
+	width: 370px;
+	height: 640px;
+	line-height: 40em;
 	display: inline-block;
 }
 
 .bracketBottomLine {
 	border-bottom: 1px solid #000000;
-	/*vertical-align:	-20px;*/
 }
 
 .bracketLeftLine {
@@ -67,46 +69,43 @@ img {
 
 /* rounds */
 .roundFinalsWrap {
-	height: 256px;
-	width: 600px;
+	height: 320px;
+	width: 800px;
 }
 
 .roundSemiWrap {
-	height: 128px;
-	width: 450px;
+	height: 160px;
+	width: 600px;
 }
 
 .roundQuarterWrap {
-	height: 64px;
-	width: 300px;
+	height: 80px;
+	width: 400px;
 }
 
 .roundSweetWrap {
-	height: 32px;
-	width: 150px;
+	height: 40px;
+	width: 200px;
 }
 
 /* winners line */
-.sweetsixteen {
+.winnersLine {
 	height: inherit;
-	width: 150px;
-	line-height: 2em;
+	width: 200px;
+}
+
+.sweetsixteen {
+	line-height: 3em;
 }
 
 .quarterfinals {
-	height: inherit;
-	width: 150px;
-	line-height: 6em;
+	line-height: 8em;
 }
 
 .semifinals {
-	height: inherit;
-	width: 150px;
-	line-height: 14em;
+	line-height: 18em;
 }
 
 .finals {
-	height: inherit;
-	width: 150px;
-	line-height: 30em;
+	line-height: 38em;
 }

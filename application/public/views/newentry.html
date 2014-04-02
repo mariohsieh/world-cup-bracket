@@ -41,164 +41,166 @@
 		</ul>	
 	</nav>
 -->	
-	<div class="bracketWrap pull-left text-center" ng-show="bracketLeft" ng-click="bracketLeft = !bracketLeft">
+	<div class="bracketWrap pull-left text-center" ng-show="bracketLeft">
 		<div class="roundFinalsWrap">
-			<div class="finals pull-right bracketBottomLine">finals</div>
+			<div class="winnersLine finals pull-right bracketBottomLine">finals</div>
 			<div class="roundSemiWrap">
-				<div class="semifinals pull-right bracketBottomLine">semifinals</div>
+				<div class="winnersLine semifinals pull-right bracketBottomLine">semifinals</div>
 				<div class="roundQuarterWrap">
-					<div class="quarterfinals pull-right bracketBottomLine">quarterfinals</div>
+					<div class="winnersLine quarterfinals pull-right bracketBottomLine">quarterfinals</div>
 					<div class="roundSweetWrap">
-						<div class="sweetsixteen bracketBottomLine">{{picks.A1.name}}</div>
+						<div class="winnersLine sweetsixteen bracketBottomLine">{{picks.A1.name}}</div>
 					</div>
 					<div class="roundSweetWrap bracketRightLine">
 					</div>
 				</div>
 				<div class="roundQuarterWrap bracketRightLine">
-					<div class="quarterfinals pull-right"></div>
+					<div class="winnersLine quarterfinals pull-right"></div>
 					<div class="roundSweetWrap bracketRightLine">
-						<div class="sweetsixteen bracketBottomLine">{{picks.B2.name}}</div>
+						<div class="winnersLine sweetsixteen bracketBottomLine">{{picks.B2.name}}</div>
 					</div>
 					<div class="roundSweetWrap"></div>
 				</div>
 			</div>
 			<div class="roundSemiWrap bracketRightLine">
-				<div class="semifinals pull-right"></div>
+				<div class="winnersLine semifinals pull-right"></div>
 				<div class="roundQuarterWrap bracketRightLine">
-					<div class="quarterfinals pull-right bracketBottomLine"></div>
+					<div class="winnersLine quarterfinals pull-right bracketBottomLine">quarterfinals</div>
 					<div class="roundSweetWrap">
-						<div class="sweetsixteen bracketBottomLine"></div>
+						<div class="winnersLine sweetsixteen bracketBottomLine">{{picks.C1.name}}</div>
 					</div>
 					<div class="roundSweetWrap bracketRightLine">
 					</div>
 				</div>
 				<div class="roundQuarterWrap">
-					<div class="quarterfinals pull-right"></div>
+					<div class="winnersLine quarterfinals pull-right"></div>
 					<div class="roundSweetWrap bracketRightLine">
-						<div class="sweetsixteen bracketBottomLine"></div>
+						<div class="winnersLine sweetsixteen bracketBottomLine">{{picks.D2.name}}</div>
 					</div>
 					<div class="roundSweetWrap"></div>
 				</div>
 			</div>
 		</div>
 		<div class="roundFinalsWrap">
-			<div class="finals pull-right"></div>
+			<div class="winnersLine finals pull-right"></div>
 			<div class="roundSemiWrap bracketRightLine">
-				<div class="semifinals pull-right bracketBottomLine"></div>
+				<div class="winnersLine semifinals pull-right bracketBottomLine">semifinals</div>
 				<div class="roundQuarterWrap">
-					<div class="quarterfinals pull-right bracketBottomLine"></div>
+					<div class="winnersLine quarterfinals pull-right bracketBottomLine">quarterfinals</div>
 					<div class="roundSweetWrap">
-						<div class="sweetsixteen bracketBottomLine"></div>
+						<div class="winnersLine sweetsixteen bracketBottomLine">{{picks.E1.name}}</div>
 					</div>
 					<div class="roundSweetWrap bracketRightLine">
 					</div>
 				</div>
 				<div class="roundQuarterWrap bracketRightLine">
-					<div class="quarterfinals pull-right"></div>
+					<div class="winnersLine quarterfinals pull-right"></div>
 					<div class="roundSweetWrap bracketRightLine">
-						<div class="sweetsixteen bracketBottomLine"></div>
+						<div class="winnersLine sweetsixteen bracketBottomLine">{{picks.F2.name}}</div>
 					</div>
 					<div class="roundSweetWrap">
 					</div>
 				</div>
 			</div>
 			<div class="roundSemiWrap">
-			<div class="semifinals pull-right"></div>
+			<div class="winnersLine semifinals pull-right"></div>
 			<div class="roundQuarterWrap bracketRightLine">
-				<div class="quarterfinals pull-right bracketBottomLine"></div>
+				<div class="winnersLine quarterfinals pull-right bracketBottomLine">quarterfinals</div>
 				<div class="roundSweetWrap">
-					<div class="sweetsixteen bracketBottomLine"></div>
+					<div class="winnersLine sweetsixteen bracketBottomLine">{{picks.G1.name}}</div>
 				</div>
 				<div class="roundSweetWrap bracketRightLine"></div>
 			</div>
 			<div class="roundQuarterWrap">
-				<div class="quarterfinals pull-right"></div>
+				<div class="winnersLine quarterfinals pull-right"></div>
 				<div class="roundSweetWrap bracketRightLine">
-					<div class="sweetsixteen bracketBottomLine"></div>
+					<div class="winnersLine sweetsixteen bracketBottomLine">{{picks.H2.name}}</div>
 				</div>
 				<div class="roundSweetWrap"></div>
 			</div>
 		</div>
 	</div>
 	</div>
-	<div class="champions pull-left text-center">champions</div>
-	<div class="bracketWrap pull-left text-center" ng-show="!bracketLeft" ng-click="bracketLeft = !bracketLeft">
+	<div class="champions pull-left text-center">
+		<span class="arrow" ng-click="bracketSwitch()">{{ indicator }}</span>
+	</div>
+	<div class="bracketWrap pull-left text-center" ng-show="!bracketLeft">
 		<div class="roundFinalsWrap">
-			<div class="finals pull-left bracketBottomLine">finals</div>
+			<div class="winnersLine finals pull-left bracketBottomLine">finals</div>
 			<div class="roundSemiWrap pull-right">
-				<div class="semifinals pull-left bracketBottomLine">semifinals</div>
+				<div class="winnersLine semifinals pull-left bracketBottomLine">semifinals</div>
 				<div class="roundQuarterWrap pull-right">
-					<div class="quarterfinals pull-left bracketBottomLine">quarterfinals</div>
+					<div class="winnersLine quarterfinals pull-left bracketBottomLine">quarterfinals</div>
 					<div class="roundSweetWrap pull-right">
-						<div class="sweetsixteen pull-left bracketBottomLine">{{picks.B1.name}}</div>
+						<div class="winnersLine sweetsixteen pull-left bracketBottomLine">{{picks.B1.name}}</div>
 					</div>
 					<div class="roundSweetWrap pull-right bracketLeftLine">
-						<div class="sweetsixteen pull-left"></div>
+						<div class="winnersLine sweetsixteen pull-left"></div>
 					</div>
 				</div>
 				<div class="roundQuarterWrap pull-right">
-					<div class="quarterfinals pull-left bracketLeftLine"></div>
-					<div class="roundSweetWrap pull-right bracketLeftLine">
-						<div class="sweetsixteen pull-left bracketBottomLine"></div>
+					<div class="winnersLine quarterfinals pull-left bracketLeftLine"></div>
+					<div class="roundSweetWrap pull-right">
+						<div class="winnersLine sweetsixteen pull-left bracketBottomLine bracketLeftLine">{{picks.A2.name}}</div>
 					</div>
 					<div class="roundSweetWrap pull-right">
-						<div class="sweetsixteen pull-left"></div>
+						<div class="winnersLine sweetsixteen pull-left"></div>
 					</div>
 				</div>
 			</div>
 			<div class="roundSemiWrap pull-right">
-				<div class="semifinals pull-left bracketLeftLine"></div>
+				<div class="winnersLine semifinals pull-left bracketLeftLine"></div>
 				<div class="roundQuarterWrap pull-right">
-					<div class="quarterfinals pull-left bracketLeftLine bracketBottomLine"></div>
+					<div class="winnersLine quarterfinals pull-left bracketLeftLine bracketBottomLine">quarterfinals</div>
 					<div class="roundSweetWrap pull-right">
-						<div class="sweetsixteen pull-left bracketBottomLine"></div>
+						<div class="winnersLine sweetsixteen pull-left bracketBottomLine">{{picks.D1.name}}</div>
 					</div>
 					<div class="roundSweetWrap pull-right bracketLeftLine"></div>
 				</div>
 				<div class="roundQuarterWrap pull-right">
-					<div class="quarterfinals pull-left"></div>
+					<div class="winnersLine quarterfinals pull-left"></div>
 					<div class="roundSweetWrap pull-right bracketLeftLine">
-						<div class="sweetsixteen pull-left bracketBottomLine"></div>
+						<div class="winnersLine sweetsixteen pull-left bracketBottomLine">{{picks.C2.name}}</div>
 					</div>
 					<div class="roundSweetWrap pull-right"></div>
 				</div>
 			</div>
 		</div>
 		<div class="roundFinalsWrap">
-			<div class="finals pull-left"></div>
+			<div class="winnersLine finals pull-left"></div>
 			<div class="roundSemiWrap pull-right">
-				<div class="semifinals pull-left bracketLeftLine bracketBottomLine"></div>
+				<div class="winnersLine semifinals pull-left bracketLeftLine bracketBottomLine">semifinals</div>
 				<div class="roundQuarterWrap pull-right">
-					<div class="quarterfinals pull-left bracketBottomLine"></div>
+					<div class="winnersLine quarterfinals pull-left bracketBottomLine">quarterfinals</div>
 					<div class="roundSweetWrap pull-right">
-						<div class="sweetsixteen pull-left bracketBottomLine"></div>
+						<div class="winnersLine sweetsixteen pull-left bracketBottomLine">{{picks.F1.name}}</div>
 					</div>
 					<div class="roundSweetWrap pull-right">
-						<div class="sweetsixteen pull-left bracketLeftLine"></div>
+						<div class="winnersLine sweetsixteen pull-left bracketLeftLine"></div>
 					</div>
 				</div>
 				<div class="roundQuarterWrap pull-right">
-					<div class="quarterfinals pull-left bracketLeftLine"></div>
+					<div class="winnersLine quarterfinals pull-left bracketLeftLine"></div>
 					<div class="roundSweetWrap pull-right">
-						<div class="sweetsixteen pull-left bracketLeftLine bracketBottomLine"></div>
+						<div class="winnersLine sweetsixteen pull-left bracketLeftLine bracketBottomLine">{{picks.E2.name}}</div>
 					</div>
 					<div class="roundSweetWrap pull-right"></div>
 				</div>
 			</div>
 			<div class="roundSemiWrap pull-right">
-				<div class="semifinals pull-left"></div>
+				<div class="winnersLine semifinals pull-left"></div>
 				<div class="roundQuarterWrap pull-right">
-					<div class="quarterfinals pull-left bracketBottomLine bracketLeftLine"></div>
+					<div class="winnersLine quarterfinals pull-left bracketBottomLine bracketLeftLine">quarterfinals</div>
 					<div class="roundSweetWrap pull-right">
-						<div class="sweetsixteen pull-left bracketBottomLine"></div>
+						<div class="winnersLine sweetsixteen pull-left bracketBottomLine">{{picks.H1.name}}</div>
 					</div>
 					<div class="roundSweetWrap pull-right bracketLeftLine">
 					</div>					
 				</div>
 				<div class="roundQuarterWrap pull-right">
-					<div class="quarterfinals pull-left"></div>
+					<div class="winnersLine quarterfinals pull-left"></div>
 					<div class="roundSweetWrap pull-right bracketLeftLine">
-						<div class="sweetsixteen pull-left bracketBottomLine"></div>
+						<div class="winnersLine sweetsixteen pull-left bracketBottomLine">{{picks.G2.name}}</div>
 					</div>
 					<div class="roundSweetWrap pull-right"></div>
 				</div>
