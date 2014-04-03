@@ -30,6 +30,10 @@ img {
 	margin-top: 55px;
 }
 
+.titleWrap {
+	margin-bottom: 20px;
+}
+
 .gWrap {
 	height: 75px;
 	line-height: 75px;
@@ -44,6 +48,7 @@ img {
 
 .gItem {
 	margin-bottom: 75px;
+	padding: 0px 0px 0px 10px;
 }
 
 .gNameDisplay {
