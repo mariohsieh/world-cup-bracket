@@ -9,6 +9,10 @@ html, body, ul, li {
 }
 
 /* single tags*/
+h1, h2, h3 {
+	margin: 20px 0px;
+}
+
 li {
 	list-style: none;
 }
@@ -26,8 +30,24 @@ img {
 	margin-top: 55px;
 }
 
-#mainNav {
+.gWrap {
+	height: 75px;
+	line-height: 75px;
+	vertical-align: middle;
+}
 
+.gLetter {
+	background-color: #C8C8C8;
+	width: 75px;
+	font-size: 2.5em;
+}
+
+.gItem {
+	margin-bottom: 75px;
+}
+
+.gNameDisplay {
+	font-size: 2.0em;
 }
 
 .pageTitle {
@@ -53,21 +73,21 @@ img {
 
 /***** bracket styling *****/
 .roundDisplayWrap {
-	width: 800px;
+	width: 860px;
 }
 .roundDisplayItem {
-	width: 200px;
+	width: 215px;
 	display: inline-block;
 }
 
 .bracketWrap {
-	width: 800px;
+	width: 860px;
 	height: 640px;
 	display: inline-block;
 }
 
 .champions {
-	width: 370px;
+	width: 250px;
 	height: 640px;
 	line-height: 40em;
 	display: inline-block;
@@ -96,28 +116,28 @@ img {
 
 .roundFinalsWrap {
 	height: 320px;
-	width: 800px;
+	width: 860px;
 }
 
 .roundSemiWrap {
 	height: 160px;
-	width: 600px;
+	width: 645px;
 }
 
 .roundQuarterWrap {
 	height: 80px;
-	width: 400px;
+	width: 430px;
 }
 
 .roundSweetWrap {
 	height: 40px;
-	width: 200px;
+	width: 215px;
 }
 
 /* team display */
 .winnersLine {
 	height: inherit;
-	width: 200px;
+	width: 215px;
 }
 
 .sweetsixteen {

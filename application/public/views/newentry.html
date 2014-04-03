@@ -4,33 +4,38 @@
 
 <section ng-show="tourneyRound == 'groupStage'" class="row">
 	<div class="col-xs-1">
-		<ul>
+		<ul class="">
 			<!-- list groups here -->
-			<li class="text-center pointer" ng-repeat="group in groups" id="{{ group }}" ng-click="selectGroup(group);groupLetter=(group)">
-				<h2>{{ group }}</h2>
-			</li>
+			<li class="gWrap gLetter text-center pointer" id="{{ group }}" ng-repeat="group in groups" ng-click="selectGroup(group);groupLetter=(group)">{{ group }}</li>
 		</ul>	
 	</div>
-	<div class="col-xs-5 col-xs-offset-1">
+	<div class="col-xs-6 col-xs-offset-1">
 		<!-- list group nations here -->
-		<ul>
-			<li ng-repeat="team in teams" id="{{ team.code }}" ng-click="groupWinner(team)">
+		<ul style="margin-top: 35px">
+			<li class="gWrap gItem" ng-repeat="team in teams">
+				<span class="gNameDisplay pointer" id="{{ team.code }}" ng-click="groupWinner(team)">
+					<!--<img src="../img/flags/{{team.code}}.png" />-->
+					{{ team.name }}
+				</span>
+				<span class="pull-right pointer">more info</span>
+<!--				
 				<h2 ng-click="">
 					<img src="../img/flags/{{team.code}}.png" />{{ team.name }}
 				</h2>	
+-->				
 			</li>
 		</ul>
 	</div>
-	<div class="col-xs-3 col-xs-offset-1">
+	<div class="col-xs-3">
 		<!-- list winners here -->
 		<h2>Group {{ groupLetter }} Winners</h3>
 		<ul>
 			<!-- <li ng-show="!gfirst">First Place</li> -->
 			<li><h3>{{ gfirst }}</h3></li>
 			<li><h3>{{ gsecond }}</h3></li>
-			<li ng-show="gsecond != 'Second Place'" ng-click="clearWinners(groupLetter)"><h4>Clear</h4></li>
+			<li ng-show="gsecond != 'Second Place'" ng-click="clearWinners(groupLetter)"><h4 class="pointer">Clear</h4></li>
 		</ul>
-		<div ng-show="koStageCheck()" ng-click="gotoKOStage()">Next Stage >></div>
+		<div class="pointer" ng-show="koStageCheck()" ng-click="gotoKOStage()">Next Stage >></div>
 	</div> 
 </section>
 <section ng-show="tourneyRound == 'koStage'" class="row">
