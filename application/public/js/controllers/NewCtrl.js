@@ -10,11 +10,15 @@ angular.module("NewCtrl", [])
 	
 	.controller("NewController", function($scope, Nations) {
 		
-		// set initial parameters on group stage enter
+		// set initial parameters on page enter
 		function initial() {
-			// page title and description
-			$scope.heading = "Group Stage";
-			$scope.description = "Please choose two nations from each group";
+			// set page title and description per stage
+			headingGroup = "Group Stage";
+			descriptionGroup = "Please choose two nations from each group";
+			headingKO = "Knockout Stage";
+			descriptionKO = "Please fill out the bracket";
+			headingChamp = "Championship";
+			descriptionChamp = "Please choose a winner and final score";
 			
 			// load nations model into $scope
 			$scope.nations = Nations;
@@ -27,32 +31,27 @@ angular.module("NewCtrl", [])
 			$scope.teams = $scope.nations.getGroup('A');
 			$scope.groupLetter = 'A';
 
-			// set variables for group stage
+			// set initial variables on page load
 			firstPlace = "First Place";
 			secondPlace = "Second Place";
 			$scope.gfirst = firstPlace;
 			$scope.gsecond = secondPlace;
-			$scope.tourneyRound = "groupStage";
 			
-			// must set this here cuz of filter
+			// set rounds for knockout stage header
 			$scope.rounds = ["Sweet Sixteen", "Quarter-Finals", "Semi-Finals", "Finals"];
 			
 			// testing settings
 			//$scope.bracketLeft = false;
-			//$scope.tourneyRound = "koStage";
-
+			//$scope.tourneyStage = "koStage";
+			groupStageEnter();
 		}
-		
-		// set initial parameters on knockout stage enter
-		function initialKO() {
-			$scope.picks = picks;
-			$scope.bracketLeft = true;
-			$scope.indicator = '>';
-			//$scope.indicator = 'right';
-			
-			//$scope.rounds = ["Sweet Sixteen", "Quarter-Finals", "Semi-Finals", "Finals"];
 
-			//console.log($scope.rounds);
+		// set parameters for group stage
+		function groupStageEnter() {	
+			$scope.tourneyStage = "groupStage";
+			$scope.stageNavText = "Next Stage >>";
+			$scope.heading = headingGroup;
+			$scope.description = descriptionGroup;
 		}
 		
 		//// define $scope functions ////
@@ -83,7 +82,6 @@ angular.module("NewCtrl", [])
 				picks[obj.group+2] = {"code": obj.code, "name": obj.name};
 				$scope.gsecond = obj.name;
 			}
-			//console.log(picks);
 			//console.log(Object.keys(picks).length);
 		}
 
@@ -94,26 +92,41 @@ angular.module("NewCtrl", [])
 			delete picks[str+1];
 			$scope.gsecond = secondPlace;
 			delete picks[str+2];
-			console.log(picks);
+			//console.log(picks);
 		}
 		
 		// check to see picks for all groups are complete
 		$scope.koStageCheck = function() {
+			//if (picks['A1'] && picks['A2'])
+			
 			if (Object.keys(picks).length == "16")
 				return true;
 			return false;
+
 		}
 		
 		// button click for KO stage
-		$scope.gotoKOStage = function() {
-			//$scope.koShow = true;
-			//$scope.groupShow = false;
-			$scope.tourneyRound = "koStage";
-			
-			$scope.heading = "Knockout Stage";
-			$scope.description = "Please fill out the bracket";
-			
-			initialKO();	
+		$scope.stageNav = function() {
+			if ($scope.tourneyStage == "groupStage") {  // go to KO stage
+				$scope.tourneyStage = "koStage";
+				$scope.heading = headingKO;
+				$scope.description = descriptionKO;
+				$scope.bracketLeft = true;
+				$scope.indicator = '>';
+				$scope.stageNavText = "<< Back";
+				
+				$scope.picks = {};
+				$scope.picks["group"] = picks;
+				$scope.picks["ko"] = {};
+				
+				//console.log($scope.picks["group"]);
+				
+			} else if ($scope.tourneyStage == "koStage") { // back to group stage
+				groupStageEnter();
+				
+			}
+			console.log($scope.picks);
+			//console.log(Object.keys($scope.picks.group).length);
 		}
 		
 		// switch sides of bracket
@@ -133,10 +146,14 @@ angular.module("NewCtrl", [])
 		
 		// choose winner for next round
 		$scope.selectWinner = function(str1,str2) {
-			$scope.picks[str2] = $scope.picks[str1];
-			//console.log($scope.picks);
+			if (str1.length == "2")
+				$scope.picks["ko"][str2] = $scope.picks["group"][str1];
+			else
+				$scope.picks["ko"][str2] = $scope.picks["ko"][str1];
+			//console.log(picks);
+
 		}
-		
+
 		initial();
 	});
 

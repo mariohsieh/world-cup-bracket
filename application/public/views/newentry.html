@@ -1,8 +1,12 @@
 <header class="row titleWrap"> <!-- Page title & description -->
-	<h1><span class="pageTitle">{{ heading }}</span>&nbsp;<span class="pageDescription">{{ description }}</span></h1>
+	<h1>
+		<span class="pageTitle">{{ heading }}</span>&nbsp;<span class="pageDescription">{{ description }}</span>
+		<span class="pull-right" ng-show="tourneyStage == 'koStage'" ng-click="stageNav()">{{ stageNavText }}</span>
+	</h1>
+	
 </header>
 
-<section class="row" ng-show="tourneyRound == 'groupStage'"> <!-- group stage -->
+<section class="row" ng-show="tourneyStage == 'groupStage'"> <!-- group stage -->
 	<article class="col-xs-1"> <!-- group letter display -->
 		<ul class="">
 			<!-- list groups here -->
@@ -33,13 +37,13 @@
 			<!-- <li ng-show="!gfirst">First Place</li> -->
 			<li><h3>{{ gfirst }}</h3></li>
 			<li><h3>{{ gsecond }}</h3></li>
-			<li ng-show="gsecond != 'Second Place'" ng-click="clearWinners(groupLetter)"><h4 class="pointer">Clear</h4></li>
+			<li ng-show="gfirst != 'First Place'" ng-click="clearWinners(groupLetter)"><h4 class="pointer">Clear</h4></li>
 		</ul>
-		<div class="pointer" ng-show="koStageCheck()" ng-click="gotoKOStage()">Next Stage >></div>
+		<div class="pointer" ng-show="koStageCheck()" ng-click="stageNav()">Next Stage >></div>
 	</article> 
 </section>
 
-<section class="row" ng-show="tourneyRound == 'koStage'"> <!-- knockout stage -->
+<section class="row" ng-show="tourneyStage == 'koStage'"> <!-- knockout stage -->
 	<article class="bracketWrap pull-left text-center" ng-show="bracketLeft">
 		<header> <!-- show the rounds up top -->
 			<ul class="roundDisplayWrap"> 
@@ -48,19 +52,19 @@
 		</header>
 		<div class="roundFinalsWrap"> <!-- top left -->
 			<div class="winnersLine finals pull-right bracketBottomLine">
-				<span class="teamDisplay" ng-click="selectWinner('FINALS1','CHAMP')">{{picks.FINALS1.name}}</span>
+				<span class="teamDisplay" ng-click="selectWinner('FINALS1','CHAMP')">{{picks.ko.FINALS1.name}}</span>
 			</div>
 			<div class="roundSemiWrap">
 				<div class="winnersLine semifinals pull-right bracketBottomLine">
-					<span class="teamDisplay" ng-click="selectWinner('SF1','FINALS1')">{{picks.SF1.name}}</span>
+					<span class="teamDisplay" ng-click="selectWinner('SF1','FINALS1')">{{picks.ko.SF1.name}}</span>
 				</div>
 				<div class="roundQuarterWrap">
 					<div class="winnersLine quarterfinals pull-right bracketBottomLine">
-						<span class="teamDisplay" ng-click="selectWinner('QF1','SF1')">{{picks.QF1.name}}</span>
+						<span class="teamDisplay" ng-click="selectWinner('QF1','SF1')">{{picks.ko.QF1.name}}</span>
 					</div>
 					<div class="roundSweetWrap">
 						<div class="winnersLine sweetsixteen bracketBottomLine">
-							<span class="teamDisplay" ng-click="selectWinner('A1','QF1')">{{picks.A1.name}}</span>
+							<span class="teamDisplay" ng-click="selectWinner('A1','QF1')">{{picks.group.A1.name}}</span>
 						</div>
 					</div>
 					<div class="roundSweetWrap bracketRightLine">
@@ -70,7 +74,7 @@
 					<div class="winnersLine quarterfinals pull-right"></div>
 					<div class="roundSweetWrap bracketRightLine">
 						<div class="winnersLine sweetsixteen bracketBottomLine">
-							<span class="teamDisplay" ng-click="selectWinner('B2','QF1')">{{picks.B2.name}}</span>
+							<span class="teamDisplay" ng-click="selectWinner('B2','QF1')">{{picks.group.B2.name}}</span>
 						</div>
 					</div>
 					<div class="roundSweetWrap"></div>
@@ -80,11 +84,11 @@
 				<div class="winnersLine semifinals pull-right"></div>
 				<div class="roundQuarterWrap bracketRightLine">
 					<div class="winnersLine quarterfinals pull-right bracketBottomLine">
-						<span class="teamDisplay" ng-click="selectWinner('QF2','SF1')">{{picks.QF2.name}}</span>
+						<span class="teamDisplay" ng-click="selectWinner('QF2','SF1')">{{picks.ko.QF2.name}}</span>
 					</div>
 					<div class="roundSweetWrap">
 						<div class="winnersLine sweetsixteen bracketBottomLine">
-							<span class="teamDisplay" ng-click="selectWinner('C1','QF2')">{{picks.C1.name}}</span>
+							<span class="teamDisplay" ng-click="selectWinner('C1','QF2')">{{picks.group.C1.name}}</span>
 						</div>
 					</div>
 					<div class="roundSweetWrap bracketRightLine">
@@ -94,7 +98,7 @@
 					<div class="winnersLine quarterfinals pull-right"></div>
 					<div class="roundSweetWrap bracketRightLine">
 						<div class="winnersLine sweetsixteen bracketBottomLine">
-							<span class="teamDisplay" ng-click="selectWinner('D2','QF2')">{{picks.D2.name}}</span>
+							<span class="teamDisplay" ng-click="selectWinner('D2','QF2')">{{picks.group.D2.name}}</span>
 						</div>
 					</div>
 					<div class="roundSweetWrap"></div>
@@ -105,15 +109,15 @@
 			<div class="winnersLine finals pull-right"></div>
 			<div class="roundSemiWrap">
 				<div class="winnersLine semifinals pull-right bracketBottomLine bracketRightLine">
-					<span class="teamDisplay" ng-click="selectWinner('SF2','FINALS1')">{{picks.SF2.name}}</span>
+					<span class="teamDisplay" ng-click="selectWinner('SF2','FINALS1')">{{picks.ko.SF2.name}}</span>
 				</div>
 				<div class="roundQuarterWrap">
 					<div class="winnersLine quarterfinals pull-right bracketBottomLine">
-						<span class="teamDisplay" ng-click="selectWinner('QF3','SF2')">{{picks.QF3.name}}</span>
+						<span class="teamDisplay" ng-click="selectWinner('QF3','SF2')">{{picks.ko.QF3.name}}</span>
 					</div>
 					<div class="roundSweetWrap">
 						<div class="winnersLine sweetsixteen bracketBottomLine">
-							<span class="teamDisplay" ng-click="selectWinner('E1','QF3')">{{picks.E1.name}}</span>
+							<span class="teamDisplay" ng-click="selectWinner('E1','QF3')">{{picks.group.E1.name}}</span>
 						</div>
 					</div>
 					<div class="roundSweetWrap bracketRightLine"></div>
@@ -122,7 +126,7 @@
 					<div class="winnersLine quarterfinals pull-right"></div>
 					<div class="roundSweetWrap bracketRightLine">
 						<div class="winnersLine sweetsixteen bracketBottomLine">
-							<span class="teamDisplay" ng-click="selectWinner('F2','QF3')">{{picks.F2.name}}</span>
+							<span class="teamDisplay" ng-click="selectWinner('F2','QF3')">{{picks.group.F2.name}}</span>
 						</div>
 					</div>
 					<div class="roundSweetWrap"></div>
@@ -132,11 +136,11 @@
 				<div class="winnersLine semifinals pull-right"></div>
 				<div class="roundQuarterWrap bracketRightLine">
 					<div class="winnersLine quarterfinals pull-right bracketBottomLine">
-						<span class="teamDisplay" ng-click="selectWinner('QF4','SF2')">{{picks.QF4.name}}</span>
+						<span class="teamDisplay" ng-click="selectWinner('QF4','SF2')">{{picks.ko.QF4.name}}</span>
 					</div>
 					<div class="roundSweetWrap">
 						<div class="winnersLine sweetsixteen bracketBottomLine">
-							<span class="teamDisplay" ng-click="selectWinner('G1','QF4')">{{picks.G1.name}}</span>
+							<span class="teamDisplay" ng-click="selectWinner('G1','QF4')">{{picks.group.G1.name}}</span>
 						</div>
 					</div>
 					<div class="roundSweetWrap bracketRightLine"></div>
@@ -145,7 +149,7 @@
 					<div class="winnersLine quarterfinals pull-right"></div>
 					<div class="roundSweetWrap bracketRightLine">
 						<div class="winnersLine sweetsixteen bracketBottomLine">
-							<span class="teamDisplay" ng-click="selectWinner('H2','QF4')">{{picks.H2.name}}</span>
+							<span class="teamDisplay" ng-click="selectWinner('H2','QF4')">{{picks.group.H2.name}}</span>
 						</div>
 					</div>
 					<div class="roundSweetWrap"></div>
@@ -165,19 +169,19 @@
 		</header>
 		<div class="roundFinalsWrap"> <!-- top right -->
 			<div class="winnersLine finals pull-left bracketBottomLine">
-				<span class="teamDisplay" ng-click="selectWinner('FINALS2', 'CHAMP')">{{picks.FINALS2.name}}</span>
+				<span class="teamDisplay" ng-click="selectWinner('FINALS2', 'CHAMP')">{{picks.ko.FINALS2.name}}</span>
 			</div>
 			<div class="roundSemiWrap pull-right">
 				<div class="winnersLine semifinals pull-left bracketBottomLine">
-					<span class="teamDisplay" ng-click="selectWinner('SF3', 'FINALS2')">{{picks.SF3.name}}</span>
+					<span class="teamDisplay" ng-click="selectWinner('SF3', 'FINALS2')">{{picks.ko.SF3.name}}</span>
 				</div>
 				<div class="roundQuarterWrap pull-right">
 					<div class="winnersLine quarterfinals pull-left bracketBottomLine">
-						<span class="teamDisplay" ng-click="selectWinner('QF5', 'SF3')">{{picks.QF5.name}}</span>
+						<span class="teamDisplay" ng-click="selectWinner('QF5', 'SF3')">{{picks.ko.QF5.name}}</span>
 					</div>
 					<div class="roundSweetWrap pull-right">
 						<div class="winnersLine sweetsixteen pull-left bracketBottomLine">
-							<span class="teamDisplay" ng-click="selectWinner('B1','QF5')">{{picks.B1.name}}</span>
+							<span class="teamDisplay" ng-click="selectWinner('B1','QF5')">{{picks.group.B1.name}}</span>
 						</div>
 					</div>
 					<div class="roundSweetWrap pull-right bracketLeftLine">
@@ -188,7 +192,7 @@
 					<div class="winnersLine quarterfinals pull-left bracketLeftLine"></div>
 					<div class="roundSweetWrap pull-right">
 						<div class="winnersLine sweetsixteen pull-left bracketBottomLine bracketLeftLine">
-							<span class="teamDisplay" ng-click="selectWinner('A2','QF5')">{{picks.A2.name}}</span>
+							<span class="teamDisplay" ng-click="selectWinner('A2','QF5')">{{picks.group.A2.name}}</span>
 						</div>
 					</div>
 					<div class="roundSweetWrap pull-right">
@@ -200,11 +204,11 @@
 				<div class="winnersLine semifinals pull-left bracketLeftLine"></div>
 				<div class="roundQuarterWrap pull-right">
 					<div class="winnersLine quarterfinals pull-left bracketLeftLine bracketBottomLine">
-						<span class="teamDisplay" ng-click="selectWinner('QF6', 'SF3')">{{picks.QF6.name}}</span>
+						<span class="teamDisplay" ng-click="selectWinner('QF6', 'SF3')">{{picks.ko.QF6.name}}</span>
 					</div>
 					<div class="roundSweetWrap pull-right">
 						<div class="winnersLine sweetsixteen pull-left bracketBottomLine">
-							<span class="teamDisplay" ng-click="selectWinner('D1','QF6')">{{picks.D1.name}}</span>
+							<span class="teamDisplay" ng-click="selectWinner('D1','QF6')">{{picks.group.D1.name}}</span>
 						</div>
 					</div>
 					<div class="roundSweetWrap pull-right bracketLeftLine"></div>
@@ -213,7 +217,7 @@
 					<div class="winnersLine quarterfinals pull-left"></div>
 					<div class="roundSweetWrap pull-right bracketLeftLine">
 						<div class="winnersLine sweetsixteen pull-left bracketBottomLine">
-							<span class="teamDisplay" ng-click="selectWinner('C2','QF6')">{{picks.C2.name}}</span>
+							<span class="teamDisplay" ng-click="selectWinner('C2','QF6')">{{picks.group.C2.name}}</span>
 						</div>
 					</div>
 					<div class="roundSweetWrap pull-right"></div>
@@ -224,15 +228,15 @@
 			<div class="winnersLine finals pull-left"></div>
 			<div class="roundSemiWrap pull-right">
 				<div class="winnersLine semifinals pull-left bracketLeftLine bracketBottomLine">
-					<span class="teamDisplay" ng-click="selectWinner('SF4', 'FINALS2')">{{picks.SF4.name}}</span>
+					<span class="teamDisplay" ng-click="selectWinner('SF4', 'FINALS2')">{{picks.ko.SF4.name}}</span>
 				</div>
 				<div class="roundQuarterWrap pull-right">
 					<div class="winnersLine quarterfinals pull-left bracketBottomLine">
-						<span class="teamDisplay" ng-click="selectWinner('QF7', 'SF4')">{{picks.QF7.name}}</span>
+						<span class="teamDisplay" ng-click="selectWinner('QF7', 'SF4')">{{picks.ko.QF7.name}}</span>
 					</div>
 					<div class="roundSweetWrap pull-right">
 						<div class="winnersLine sweetsixteen pull-left bracketBottomLine">
-							<span class="teamDisplay" ng-click="selectWinner('F1', 'QF7')">{{picks.F1.name}}</span>
+							<span class="teamDisplay" ng-click="selectWinner('F1', 'QF7')">{{picks.group.F1.name}}</span>
 						</div>
 					</div>
 					<div class="roundSweetWrap pull-right">
@@ -243,7 +247,7 @@
 					<div class="winnersLine quarterfinals pull-left bracketLeftLine"></div>
 					<div class="roundSweetWrap pull-right">
 						<div class="winnersLine sweetsixteen pull-left bracketLeftLine bracketBottomLine">
-							<span class="teamDisplay" ng-click="selectWinner('E2', 'QF7')">{{picks.E2.name}}</span>
+							<span class="teamDisplay" ng-click="selectWinner('E2', 'QF7')">{{picks.group.E2.name}}</span>
 						</div>
 					</div>
 					<div class="roundSweetWrap pull-right"></div>
@@ -253,11 +257,11 @@
 				<div class="winnersLine semifinals pull-left"></div>
 				<div class="roundQuarterWrap pull-right">
 					<div class="winnersLine quarterfinals pull-left bracketBottomLine bracketLeftLine">
-						<span class="teamDisplay" ng-click="selectWinner('QF8', 'SF4')">{{picks.QF8.name}}</span>
+						<span class="teamDisplay" ng-click="selectWinner('QF8', 'SF4')">{{picks.ko.QF8.name}}</span>
 					</div>
 					<div class="roundSweetWrap pull-right">
 						<div class="winnersLine sweetsixteen pull-left bracketBottomLine">
-							<span class="teamDisplay" ng-click="selectWinner('H1', 'QF8')">{{picks.H1.name}}</span>
+							<span class="teamDisplay" ng-click="selectWinner('H1', 'QF8')">{{picks.group.H1.name}}</span>
 						</div>
 					</div>
 					<div class="roundSweetWrap pull-right bracketLeftLine">
@@ -267,7 +271,7 @@
 					<div class="winnersLine quarterfinals pull-left"></div>
 					<div class="roundSweetWrap pull-right bracketLeftLine">
 						<div class="winnersLine sweetsixteen pull-left bracketBottomLine">
-							<span class="teamDisplay" ng-click="selectWinner('G2', 'QF8')">{{picks.G2.name}}</span>
+							<span class="teamDisplay" ng-click="selectWinner('G2', 'QF8')">{{picks.group.G2.name}}</span>
 						</div>
 					</div>
 					<div class="roundSweetWrap pull-right"></div>
