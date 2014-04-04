@@ -1,7 +1,7 @@
 <header class="row titleWrap"> <!-- Page title & description -->
 	<h1>
 		<span class="pageTitle">{{ heading }}</span>&nbsp;<span class="pageDescription">{{ description }}</span>
-		<span class="pull-right" ng-show="tourneyStage == 'koStage'" ng-click="stageNav()">{{ stageNavText }}</span>
+		<button class="pull-right" ng-show="stageNavCheck()" ng-click="stageNav()">{{ stageNavText }}</button>
 	</h1>
 	
 </header>
@@ -37,9 +37,9 @@
 			<!-- <li ng-show="!gfirst">First Place</li> -->
 			<li><h3>{{ gfirst }}</h3></li>
 			<li><h3>{{ gsecond }}</h3></li>
-			<li ng-show="gfirst != 'First Place'" ng-click="clearWinners(groupLetter)"><h4 class="pointer">Clear</h4></li>
+			<!--<li ng-show="gfirst != 'First Place'" ng-click="clearWinners(groupLetter)"><h4 class="pointer">Clear</h4></li>-->
+			<li><button class="{{ disableToggle }}" ng-click="clearWinners(groupLetter)" ng-disabled="gfirst == 'First Place'">Clear</button>
 		</ul>
-		<div class="pointer" ng-show="koStageCheck()" ng-click="stageNav()">Next Stage >></div>
 	</article> 
 </section>
 

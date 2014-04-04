@@ -21,11 +21,23 @@ img {
 	width: 75px;
 }
 
-/* class definitions */
+/**** class definitions ****/
+/* effects */
 .pointer {
 	cursor: pointer;
 }
 
+.arrow {
+	font-size: 10em;
+	font-stretch: ultra-condensed;
+}
+
+.disabled {
+	opacity: 0.5;
+}
+
+
+/* layout */
 .container {
 	margin-top: 55px;
 }
@@ -34,6 +46,19 @@ img {
 	margin-bottom: 20px;
 }
 
+.pageTitle {
+	font-size: 1.2em;
+	font-variant: small-caps;
+	font-weight: bold;
+}
+
+.pageDescription {
+	font-size: .5em;
+	font-style: italic;
+	vertical-align: middle;
+}
+
+/* group stage */
 .gWrap {
 	height: 75px;
 	line-height: 75px;
@@ -55,28 +80,12 @@ img {
 	font-size: 2.0em;
 }
 
-.pageTitle {
-	font-size: 1.2em;
-	font-variant: small-caps;
-	font-weight: bold;
-}
-
-.pageDescription {
-	font-size: .5em;
-	font-style: italic;
-	vertical-align: middle;
-}
-
 .koText {
 	vertical-align: bottom;
 }
 
-.arrow {
-	font-size: 10em;
-	font-stretch: ultra-condensed;
-}
 
-/***** bracket styling *****/
+/***** ko stage *****/
 .roundDisplayWrap {
 	width: 860px;
 }
@@ -113,10 +122,6 @@ img {
 /* rounds */
 .roundDisplayWrap {
 	font-size: 1.3em;
-}
-
-.roundDisplayItem {
-
 }
 
 .roundFinalsWrap {

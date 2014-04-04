@@ -49,9 +49,11 @@ angular.module("NewCtrl", [])
 		// set parameters for group stage
 		function groupStageEnter() {	
 			$scope.tourneyStage = "groupStage";
-			$scope.stageNavText = "Next Stage >>";
+			$scope.stageNavText = "Next";
 			$scope.heading = headingGroup;
 			$scope.description = descriptionGroup;
+
+			$scope.disableToggle = "disabled";
 		}
 		
 		//// define $scope functions ////
@@ -83,6 +85,8 @@ angular.module("NewCtrl", [])
 				$scope.gsecond = obj.name;
 			}
 			//console.log(Object.keys(picks).length);
+			//$scope.koStageCheck();
+			$scope.disableToggle = "";
 		}
 
 		// remove winners for specified group
@@ -93,16 +97,19 @@ angular.module("NewCtrl", [])
 			$scope.gsecond = secondPlace;
 			delete picks[str+2];
 			//console.log(picks);
+			$scope.disableToggle = "disabled";
 		}
 		
-		// check to see picks for all groups are complete
-		$scope.koStageCheck = function() {
-			//if (picks['A1'] && picks['A2'])
-			
-			if (Object.keys(picks).length == "16")
+		// stage navigation check
+		$scope.stageNavCheck = function() {
+			if ($scope.tourneyStage == "groupStage") {
+				if (Object.keys(picks).length == "16") {
+					return true;
+				}
+			}
+			if ($scope.tourneyStage == "koStage")
 				return true;
 			return false;
-
 		}
 		
 		// button click for KO stage
@@ -113,7 +120,7 @@ angular.module("NewCtrl", [])
 				$scope.description = descriptionKO;
 				$scope.bracketLeft = true;
 				$scope.indicator = '>';
-				$scope.stageNavText = "<< Back";
+				$scope.stageNavText = "Back";
 				
 				$scope.picks = {};
 				$scope.picks["group"] = picks;
@@ -150,8 +157,6 @@ angular.module("NewCtrl", [])
 				$scope.picks["ko"][str2] = $scope.picks["group"][str1];
 			else
 				$scope.picks["ko"][str2] = $scope.picks["ko"][str1];
-			//console.log(picks);
-
 		}
 
 		initial();
