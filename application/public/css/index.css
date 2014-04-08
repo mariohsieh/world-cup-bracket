@@ -29,7 +29,7 @@ img {
 
 .arrow {
 	font-size: 10em;
-	font-stretch: ultra-condensed;
+	/*font-stretch: ultra-condensed;*/
 }
 
 .disabled {
@@ -100,7 +100,7 @@ img {
 	display: inline-block;
 }
 
-.champions {
+.indication {
 	width: 250px;
 	height: 640px;
 	line-height: 40em;

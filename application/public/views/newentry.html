@@ -1,7 +1,12 @@
 <header class="row titleWrap"> <!-- Page title & description -->
 	<h1>
 		<span class="pageTitle">{{ heading }}</span>&nbsp;<span class="pageDescription">{{ description }}</span>
-		<button class="pull-right" ng-show="stageNavCheck()" ng-click="stageNav()">{{ stageNavText }}</button>
+		<div class="pull-right">
+			<button class="pull-left" ng-show="tourneyStage != 'groupStage'" ng-click="stageNav('Back')">Back</button>
+			<button class="pull-right" ng-show="stageNavCheck()" ng-click="stageNav('Next')">Next</button>
+
+		</div>
+
 	</h1>
 	
 </header>
@@ -52,7 +57,7 @@
 		</header>
 		<div class="roundFinalsWrap"> <!-- top left -->
 			<div class="winnersLine finals pull-right bracketBottomLine">
-				<span class="teamDisplay" ng-click="selectWinner('FINALS1','CHAMP')">{{picks.ko.FINALS1.name}}</span>
+				<span class="teamDisplay">{{picks.ko.FINALS1.name}}</span>
 			</div>
 			<div class="roundSemiWrap">
 				<div class="winnersLine semifinals pull-right bracketBottomLine">
@@ -157,7 +162,7 @@
 			</div>
 		</div>
 	</article>
-	<article class="champions pull-left text-center">
+	<article class="indication pull-left text-center">
 		<span class="arrow pointer" ng-click="bracketSwitch()">{{ indicator }}</span>
 		<!--<i class="fa fa-chevron-{{indicator}}" ng-click="bracketSwitch()"></i>-->
 	</article>
@@ -169,7 +174,7 @@
 		</header>
 		<div class="roundFinalsWrap"> <!-- top right -->
 			<div class="winnersLine finals pull-left bracketBottomLine">
-				<span class="teamDisplay" ng-click="selectWinner('FINALS2', 'CHAMP')">{{picks.ko.FINALS2.name}}</span>
+				<span class="teamDisplay">{{picks.ko.FINALS2.name}}</span>
 			</div>
 			<div class="roundSemiWrap pull-right">
 				<div class="winnersLine semifinals pull-left bracketBottomLine">
@@ -280,7 +285,11 @@
 		</div>
 	</article>
 </section>
-
+<section ng-show="tourneyStage == 'finalsStage'">
+	<article>
+		<p>hello there</p>
+	</article>
+</section>
 
 
 

@@ -17,8 +17,8 @@ angular.module("NewCtrl", [])
 			descriptionGroup = "Please choose two nations from each group";
 			headingKO = "Knockout Stage";
 			descriptionKO = "Please fill out the bracket";
-			headingChamp = "Championship";
-			descriptionChamp = "Please choose a winner and final score";
+			headingFinals = "Championship";
+			descriptionFinals = "Please choose a winner and final score";
 			
 			// load nations model into $scope
 			$scope.nations = Nations;
@@ -26,7 +26,11 @@ angular.module("NewCtrl", [])
 
 			// create object for bracket selections
 			picks = {};
-
+			
+			$scope.picks = {};
+			$scope.picks["ko"] = {};
+			$scope.picks["finals"] = {};
+			
 			// default to group A onload
 			$scope.teams = $scope.nations.getGroup('A');
 			$scope.groupLetter = 'A';
@@ -46,14 +50,33 @@ angular.module("NewCtrl", [])
 			groupStageEnter();
 		}
 
-		// set parameters for group stage
+		// set parameters for group stage enter
 		function groupStageEnter() {	
 			$scope.tourneyStage = "groupStage";
-			$scope.stageNavText = "Next";
+			//$scope.stageNavText = "Next";
 			$scope.heading = headingGroup;
 			$scope.description = descriptionGroup;
 
-			$scope.disableToggle = "disabled";
+			if ($scope.gfirst == firstPlace)
+				$scope.disableToggle = "disabled";
+		}
+
+		// set parameters for ko stage enter
+		function koStageEnter() {
+			$scope.tourneyStage = "koStage";
+			$scope.heading = headingKO;
+			$scope.description = descriptionKO;
+			$scope.bracketLeft = true;
+			$scope.indicator = '>';
+			//$scope.stageNavText = "Back";
+			
+			$scope.picks["group"] = picks;			
+		}
+		
+		function finalsEnter() {
+			$scope.tourneyStage = "finalsStage";
+			$scope.heading = headingFinals;
+			$scope.description = descriptionFinals;
 		}
 		
 		//// define $scope functions ////
@@ -107,30 +130,29 @@ angular.module("NewCtrl", [])
 					return true;
 				}
 			}
-			if ($scope.tourneyStage == "koStage")
-				return true;
+			if ($scope.tourneyStage == "koStage") {
+				if (Object.keys($scope.picks["ko"]).length == "14") {
+					return true;
+				}
+			}
 			return false;
 		}
 		
-		// button click for KO stage
-		$scope.stageNav = function() {
-			if ($scope.tourneyStage == "groupStage") {  // go to KO stage
-				$scope.tourneyStage = "koStage";
-				$scope.heading = headingKO;
-				$scope.description = descriptionKO;
-				$scope.bracketLeft = true;
-				$scope.indicator = '>';
-				$scope.stageNavText = "Back";
-				
-				$scope.picks = {};
-				$scope.picks["group"] = picks;
-				$scope.picks["ko"] = {};
-				
-				//console.log($scope.picks["group"]);
-				
-			} else if ($scope.tourneyStage == "koStage") { // back to group stage
-				groupStageEnter();
-				
+		// tourney stage navigation
+		$scope.stageNav = function(data) {
+			if (data == 'Next') {
+				if ($scope.tourneyStage == "groupStage") {  // go to KO stage
+					koStageEnter();					
+				} else if ($scope.tourneyStage == "koStage") {	// go to finals
+					finalsEnter();
+				}
+			}
+			else if (data == 'Back'){
+				if ($scope.tourneyStage == "koStage") { // back to group stage
+					groupStageEnter();	
+				} else if ($scope.tourneyStage == "finalsStage") {	// back to KO stage 
+					koStageEnter();
+				}
 			}
 			console.log($scope.picks);
 			//console.log(Object.keys($scope.picks.group).length);
