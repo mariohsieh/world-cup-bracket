@@ -17,9 +17,6 @@ li {
 	list-style: none;
 }
 
-img {
-	width: 75px;
-}
 
 /**** class definitions ****/
 /* effects */
@@ -27,15 +24,13 @@ img {
 	cursor: pointer;
 }
 
-.arrow {
-	font-size: 10em;
-	/*font-stretch: ultra-condensed;*/
+.inlineBlock {
+	display: inline-block;
 }
 
 .disabled {
 	opacity: 0.5;
 }
-
 
 /* layout */
 .container {
@@ -58,7 +53,7 @@ img {
 	vertical-align: middle;
 }
 
-/* group stage */
+/***** group stage *****/
 .gWrap {
 	height: 75px;
 	line-height: 75px;
@@ -80,10 +75,14 @@ img {
 	font-size: 2.0em;
 }
 
-.koText {
-	vertical-align: bottom;
+.gFlag {
+	width: 75px;
 }
 
+/* details */
+.dFlag {
+	
+}
 
 /***** ko stage *****/
 .roundDisplayWrap {
@@ -117,6 +116,10 @@ img {
 
 .bracketRightLine {
 	border-right: 1px solid #000000;
+}
+
+.arrow {
+	font-size: 10em;
 }
 
 /* rounds */
@@ -169,4 +172,10 @@ img {
 .teamDisplay {
 	font-size: 1.2em;
 	cursor: pointer;
+}
+
+
+/***** finals stage *****/
+.fFlag {
+	width: 100%;
 }

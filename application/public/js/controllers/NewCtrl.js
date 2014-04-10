@@ -17,8 +17,8 @@ angular.module("NewCtrl", [])
 			descriptionGroup = "Please choose two nations from each group";
 			headingKO = "Knockout Stage";
 			descriptionKO = "Please fill out the bracket";
-			headingFinals = "Championship";
-			descriptionFinals = "Please choose a winner and final score";
+			headingFinals = "2014 World Cup Final";
+			descriptionFinals = "Please choose a champion and final score";
 			
 			// load nations model into $scope
 			$scope.nations = Nations;
@@ -175,10 +175,13 @@ angular.module("NewCtrl", [])
 		
 		// choose winner for next round
 		$scope.selectWinner = function(str1,str2) {
-			if (str1.length == "2")
-				$scope.picks["ko"][str2] = $scope.picks["group"][str1];
-			else
-				$scope.picks["ko"][str2] = $scope.picks["ko"][str1];
+			if ($scope.tourneyStage == "koStage") {
+				if (str1.length == "2")	// sweet 16 check
+					$scope.picks["ko"][str2] = $scope.picks["group"][str1];
+				else // all other rounds in KO stage
+					$scope.picks["ko"][str2] = $scope.picks["ko"][str1];
+			} else 	// final game
+				$scope.picks["finals"][str2] = $scope.picks["ko"][str1];
 		}
 
 		initial();
