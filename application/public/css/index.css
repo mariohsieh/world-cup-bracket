@@ -53,6 +53,10 @@ li {
 	vertical-align: middle;
 }
 
+.stageNavWrap {
+	width: 200px;
+}
+
 /***** group stage *****/
 .gWrap {
 	height: 75px;
@@ -178,4 +182,9 @@ li {
 /***** finals stage *****/
 .fFlag {
 	width: 100%;
+}
+
+.fTeamDisplay {
+	font-size: 2em;
+	text-align: center;
 }

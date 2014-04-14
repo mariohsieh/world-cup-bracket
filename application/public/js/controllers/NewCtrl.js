@@ -26,7 +26,6 @@ angular.module("NewCtrl", [])
 
 			// create object for bracket selections
 			picks = {};
-			
 			$scope.picks = {};
 			$scope.picks["ko"] = {};
 			$scope.picks["finals"] = {};

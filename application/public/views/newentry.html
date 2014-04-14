@@ -1,10 +1,9 @@
 <header class="row titleWrap"> <!-- Page title & description -->
 	<h1>
 		<span class="pageTitle">{{ heading }}</span>&nbsp;<span class="pageDescription">{{ description }}</span>
-		<div class="pull-right">
+		<div class="stageNavWrap pull-right">
 			<button class="pull-left" ng-show="tourneyStage != 'groupStage'" ng-click="stageNav('Back')">Back</button>
 			<button class="pull-right" ng-show="stageNavCheck()" ng-click="stageNav('Next')">Next</button>
-
 		</div>
 
 	</h1>
@@ -288,19 +287,18 @@
 <section class="row" ng-show="tourneyStage == 'finalsStage'">
 	<article class="col-xs-4">
 		<img class="fFlag" src="../img/flags/{{picks.ko.F1.code}}.png" />
-		<p ng-click="selectWinner('F1', 'CHAMPS')">{{ picks.ko.F1.name }}</p>
+		<h2 class="fTeamDisplay pointer" ng-click="selectWinner('F1', 'CHAMPS')">{{ picks.ko.F1.name }}</h2>
 	</article>
-	<article class="col-xs-4 text-center">
+	<article class="col-xs-4">
 		<!-- user chooses winner and score/options-->
-		<p>VS</p>
-		<span >{{ picks.finals.CHAMPS.name }} </span>
+		<h2 class="fTeamDisplay">{{ picks.finals.CHAMPS.name }}</h2>
+		<h3 class="text-center">2014 World Cup Champions</h3>
 	</article>
 	<article class="col-xs-4">
 		<img class="fFlag" src="../img/flags/{{picks.ko.F2.code}}.png" />
-		<p ng-click="selectWinner('F2', 'CHAMPS')">{{ picks.ko.F2.name }}</p>
+		<h2 class="fTeamDisplay pointer" ng-click="selectWinner('F2', 'CHAMPS')">{{ picks.ko.F2.name }}</h2>
 	</article>
 </section>
-
 
 
 
