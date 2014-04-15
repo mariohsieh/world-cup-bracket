@@ -1,25 +1,24 @@
 <header class="row titleWrap"> <!-- Page title & description -->
-	<h1>
+	<h1 class="col-xs-12 col-lg-8 col-lg-offset-2">
 		<span class="pageTitle">{{ heading }}</span>&nbsp;<span class="pageDescription">{{ description }}</span>
 		<div class="stageNavWrap pull-right">
 			<button class="pull-left" ng-show="tourneyStage != 'groupStage'" ng-click="stageNav('Back')">Back</button>
 			<button class="pull-right" ng-show="stageNavCheck()" ng-click="stageNav('Next')">Next</button>
 		</div>
-
 	</h1>
 	
 </header>
 
 <section class="row" ng-show="tourneyStage == 'groupStage'"> <!-- group stage -->
-	<article class="col-xs-1"> <!-- group letter display -->
+
+	<article class="col-xs-12 col-lg-5 col-lg-offset-1"> <!-- display nations by group -->
 		<ul class="">
 			<!-- list groups here -->
-			<li class="gWrap gLetter text-center pointer" id="{{ group }}" ng-repeat="group in groups" ng-click="selectGroup(group);groupLetter=(group)">{{ group }}</li>
-		</ul>	
-	</article>
-	<article class="col-xs-6 col-xs-offset-1"> <!-- display nations by group -->
+			<li class="inlineBlock gWrap gLetter text-center pointer" id="{{ group }}" ng-repeat="group in groups" ng-click="selectGroup(group);groupLetter=(group)">{{ group }}</li>
+		</ul>		
+	
 		<!-- list group nations here -->
-		<ul style="margin-top: 35px">
+		<ul>
 			<li class="gWrap gItem" ng-repeat="team in teams">
 				<span class="gNameDisplay pointer" id="{{ team.code }}" ng-click="groupWinner(team)">
 					<img class="gFlag" src="../img/flags/{{team.code}}.png" />
@@ -34,7 +33,7 @@
 			</li>
 		</ul>
 	</article>
-	<article class="col-xs-3 col-xs-offset-1"> <!-- display group winners -->
+	<article class="col-xs-12 col-lg-2"> <!-- display group winners -->
 		<!-- list winners here -->
 		<h2>Group {{ groupLetter }} Winners</h3>
 		<ul>
@@ -291,15 +290,28 @@
 	</article>
 	<article class="col-xs-4">
 		<!-- user chooses winner and score/options-->
-		<h2 class="fTeamDisplay">{{ picks.finals.CHAMPS.name }}</h2>
+		<h2 class="fTeamDisplay" ng-show="!picks.finals.CHAMPS.name">(Select a winner)</h2>
+		<h2 class="fTeamDisplay" ng-show="picks.finals.CHAMPS.name">{{ picks.finals.CHAMPS.name }}</h2>
+		<hr />
 		<h3 class="text-center">2014 World Cup Champions</h3>
+		<!-- input for final score -->		
+		<!-- radio buttons/check buttons for overtime, penalty shootout-->
+		<div class="text-center" ng-show="picks.finals.CHAMPS.name">
+			<input class="fScore text-center" type="number" min="0" max="9" value="0" />
+			<h2 class="inlineBlock">-</h2>
+			<input class="fScore text-center" type="number" min="0" max="9" value="0" />
+			<h3>Final Score</h3>
+		</div>
+		<div class="text-center" ng-show="picks.finals.CHAMPS.name">
+			<span>A.E.T.</span><input type="checkbox" />
+			<span>Penalty Shootout</span><input type="checkbox" />
+		</div>
 	</article>
 	<article class="col-xs-4">
 		<img class="fFlag" src="../img/flags/{{picks.ko.F2.code}}.png" />
 		<h2 class="fTeamDisplay pointer" ng-click="selectWinner('F2', 'CHAMPS')">{{ picks.ko.F2.name }}</h2>
 	</article>
 </section>
-
 
 
 

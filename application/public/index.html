@@ -30,21 +30,22 @@
 </head>
 <body ng-controller="HomeController">
 	<!-- header -->
-	<nav id="mainNav" class="navbar navbar-inverse navbar-fixed-top">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="/">World Cup Bracket 2014</a>
-		</div>
-		<ul class="nav navbar-nav pull-right">
-			<li><a href="/brackets">All Entries</a></li>
-			<li><a href="/new">Submit Entry</a></li>
-		</ul>
+	<nav id="mainNav" class="navbar navbar-inverse navbar-fixed-top ">
+		<header class="col-lg-10 col-lg-offset-1">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">World Cup Bracket 2014</a>
+			</div>
+			<ul class="nav navbar-nav pull-right">
+				<li><a href="/brackets">All Entries</a></li>
+				<li><a href="/new">Submit Entry</a></li>
+			</ul>
+		</header>
 	</nav>
+	
 	<!-- google maps bg-->
 	<div id="map-canvas" /></div> 
-	<div class="container">
-		
-		<div ng-view><!-- angular dynamic content --></div>
-		
+	<div class="container-fluid" ng-view>
+		<!-- dynamic angular content -->
 	</div>
 </body>
 </html>

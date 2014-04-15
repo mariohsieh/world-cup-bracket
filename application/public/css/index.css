@@ -33,7 +33,7 @@ li {
 }
 
 /* layout */
-.container {
+.container-fluid {
 	margin-top: 55px;
 }
 
@@ -71,7 +71,7 @@ li {
 }
 
 .gItem {
-	margin-bottom: 75px;
+	/*margin: 40px 0px;*/
 	padding: 0px 0px 0px 10px;
 }
 
@@ -187,4 +187,14 @@ li {
 .fTeamDisplay {
 	font-size: 2em;
 	text-align: center;
+}
+
+hr {
+	border-top: 3px solid black;
+}
+
+.fScore {
+	font-size: 3em;
+	width: 75px;
+	height: 75px;
 }

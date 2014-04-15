@@ -14,11 +14,11 @@ angular.module("NewCtrl", [])
 		function initial() {
 			// set page title and description per stage
 			headingGroup = "Group Stage";
-			descriptionGroup = "Please choose two nations from each group";
+			descriptionGroup = "Please select two nations from each group";
 			headingKO = "Knockout Stage";
 			descriptionKO = "Please fill out the bracket";
 			headingFinals = "2014 World Cup Final";
-			descriptionFinals = "Please choose a champion and final score";
+			descriptionFinals = "Please select a champion and final score";
 			
 			// load nations model into $scope
 			$scope.nations = Nations;
@@ -42,11 +42,12 @@ angular.module("NewCtrl", [])
 			
 			// set rounds for knockout stage header
 			$scope.rounds = ["Sweet Sixteen", "Quarter-Finals", "Semi-Finals", "Finals"];
-			
+
+			groupStageEnter();
+						
 			// testing settings
 			//$scope.bracketLeft = false;
 			//$scope.tourneyStage = "koStage";
-			groupStageEnter();
 		}
 
 		// set parameters for group stage enter
