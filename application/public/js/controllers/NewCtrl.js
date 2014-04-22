@@ -22,7 +22,7 @@ angular.module("NewCtrl", [])
 			
 			// load nations model into $scope
 			$scope.nations = Nations;
-			$scope.groups = ["A", "B", "C", "D", "E", "F", "G", "H"];
+			$scope.groups = ["<","A", "B", "C", "D", "E", "F", "G", "H",">"];
 
 			// create object for bracket selections
 			picks = {};
@@ -82,6 +82,29 @@ angular.module("NewCtrl", [])
 		//// define $scope functions ////
 		// choose which group teams to display
 		$scope.selectGroup = function(str) {
+			if (str == ">") {
+				if ($scope.groupLetter == "H") // check if it's the last group
+					//console.log($scope.groups.indexOf($scope.groupLetter));
+					str = "A";
+				else {
+					//str = $scope.groups[str+1];
+					var index = $scope.groups.indexOf($scope.groupLetter)+1;
+					str = $scope.groups[index];
+				}
+				//console.log(str);
+			}
+			
+			if (str == "<") {
+				if ($scope.groupLetter == "A") {// check if it's the last group
+					//console.log($scope.groups.indexOf($scope.groupLetter));
+					str = "H";
+				} else {
+					//str = $scope.groups[str+1];
+					var index = $scope.groups.indexOf($scope.groupLetter)-1;
+					str = $scope.groups[index];
+				}
+			}
+						
 			$scope.teams = $scope.nations.getGroup(str);
 			//console.log($scope.teams);
 			$scope.groupLetter = str;

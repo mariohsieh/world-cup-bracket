@@ -57,16 +57,20 @@ li {
 	width: 200px;
 }
 
+
 /***** group stage *****/
 .gWrap {
-	height: 75px;
-	line-height: 75px;
-	vertical-align: middle;
+	height: auto;
+	line-height: auto;
+	
+/*	height: 75px;
+	line-height: 75px;	
+*/	vertical-align: middle;
 }
 
 .gLetter {
 	background-color: #C8C8C8;
-	width: 75px;
+	width: auto;
 	font-size: 2.5em;
 }
 

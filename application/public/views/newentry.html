@@ -1,6 +1,6 @@
 <header class="row titleWrap"> <!-- Page title & description -->
 	<h1 class="col-xs-12 col-lg-8 col-lg-offset-2">
-		<span class="pageTitle">{{ heading }}</span>&nbsp;<span class="pageDescription">{{ description }}</span>
+		<span class="pageTitle">{{heading}}</span>&nbsp;<span class="pageDescription">{{description}}</span>
 		<div class="stageNavWrap pull-right">
 			<button class="pull-left" ng-show="tourneyStage != 'groupStage'" ng-click="stageNav('Back')">Back</button>
 			<button class="pull-right" ng-show="stageNavCheck()" ng-click="stageNav('Next')">Next</button>
@@ -10,19 +10,22 @@
 </header>
 
 <section class="row" ng-show="tourneyStage == 'groupStage'"> <!-- group stage -->
-
-	<article class="col-xs-12 col-lg-5 col-lg-offset-1"> <!-- display nations by group -->
-		<ul class="">
+	<article class="col-xs-12 col-lg-8 col-lg-offset-2"> <!-- group letter display -->
+		<ul class="g">
 			<!-- list groups here -->
-			<li class="inlineBlock gWrap gLetter text-center pointer" id="{{ group }}" ng-repeat="group in groups" ng-click="selectGroup(group);groupLetter=(group)">{{ group }}</li>
-		</ul>		
-	
+			<li class="inlineBlock gWrap gLetter text-center pointer" id="{{group}}" ng-repeat="group in groups" ng-click="selectGroup(group);groupLetter=(group)">{{group}}</li>
+		</ul>	
+	</article>
+	<article class="col-xs-12 col-lg-2 col-lg-offset-1"> <!-- group schedule -->
+		<h3>Group {{groupLetter}} Schedule</h3>
+	</article>
+	<article class="col-xs-12 col-lg-5"> <!-- display nations by group -->
 		<!-- list group nations here -->
 		<ul>
 			<li class="gWrap gItem" ng-repeat="team in teams">
-				<span class="gNameDisplay pointer" id="{{ team.code }}" ng-click="groupWinner(team)">
+				<span class="gNameDisplay pointer" id="{{team.code}}" ng-click="groupWinner(team)">
 					<img class="gFlag" src="../img/flags/{{team.code}}.png" />
-					{{ team.name }}
+					{{team.name}}
 				</span>
 				<span class="pull-right pointer">more info</span>
 <!--				
@@ -33,15 +36,15 @@
 			</li>
 		</ul>
 	</article>
-	<article class="col-xs-12 col-lg-2"> <!-- display group winners -->
+	<article class="col-xs-12 col-lg-3 text-right"> <!-- display group winners -->
 		<!-- list winners here -->
-		<h2>Group {{ groupLetter }} Winners</h3>
+		<h3>Group {{ groupLetter }} Winners</h3>
 		<ul>
 			<!-- <li ng-show="!gfirst">First Place</li> -->
-			<li><h3>{{ gfirst }}</h3></li>
-			<li><h3>{{ gsecond }}</h3></li>
+			<li><h3>{{gfirst}}</h3></li>
+			<li><h3>{{gsecond}}</h3></li>
 			<!--<li ng-show="gfirst != 'First Place'" ng-click="clearWinners(groupLetter)"><h4 class="pointer">Clear</h4></li>-->
-			<li><button class="{{ disableToggle }}" ng-click="clearWinners(groupLetter)" ng-disabled="gfirst == 'First Place'">Clear</button>
+			<li><button class="{{disableToggle}}" ng-click="clearWinners(groupLetter)" ng-disabled="gfirst == 'First Place'">Clear</button></li>
 		</ul>
 	</article> 
 </section>
@@ -312,16 +315,3 @@
 		<h2 class="fTeamDisplay pointer" ng-click="selectWinner('F2', 'CHAMPS')">{{ picks.ko.F2.name }}</h2>
 	</article>
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
