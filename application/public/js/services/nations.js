@@ -470,23 +470,3 @@ angular.module('nationService',[])
 
 		return Nations;
 	});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

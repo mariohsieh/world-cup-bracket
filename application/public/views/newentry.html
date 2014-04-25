@@ -11,9 +11,9 @@
 
 <section class="row" ng-show="tourneyStage == 'groupStage'"> <!-- group stage -->
 	<article class="col-xs-12 col-lg-8 col-lg-offset-2"> <!-- group letter display -->
-		<ul class="g">
+		<ul class="">
 			<!-- list groups here -->
-			<li class="inlineBlock gWrap gLetter text-center pointer" id="{{group}}" ng-repeat="group in groups" ng-click="selectGroup(group);groupLetter=(group)">{{group}}</li>
+			<li class="inlineBlock gLetter text-center pointer" id="{{group}}" ng-repeat="group in groups" ng-click="selectGroup(group);groupLetter=(group)">{{group}}</li>
 		</ul>	
 	</article>
 	<article class="col-xs-12 col-lg-2 col-lg-offset-1"> <!-- group schedule -->
@@ -22,12 +22,12 @@
 	<article class="col-xs-12 col-lg-5"> <!-- display nations by group -->
 		<!-- list group nations here -->
 		<ul>
-			<li class="gWrap gItem" ng-repeat="team in teams">
+			<li class="gItem" ng-repeat="team in teams">
 				<span class="gNameDisplay pointer" id="{{team.code}}" ng-click="groupWinner(team)">
 					<img class="gFlag" src="../img/flags/{{team.code}}.png" />
 					{{team.name}}
 				</span>
-				<span class="pull-right pointer">more info</span>
+				<span class="pointer pull-right">more info</span>
 <!--				
 				<h2 ng-click="">
 					<img src="../img/flags/{{team.code}}.png" />{{ team.name }}
@@ -305,10 +305,12 @@
 			<input class="fScore text-center" type="number" min="0" max="9" value="0" />
 			<h3>Final Score</h3>
 		</div>
+<!--
 		<div class="text-center" ng-show="picks.finals.CHAMPS.name">
 			<span>A.E.T.</span><input type="checkbox" />
 			<span>Penalty Shootout</span><input type="checkbox" />
 		</div>
+-->
 	</article>
 	<article class="col-xs-4">
 		<img class="fFlag" src="../img/flags/{{picks.ko.F2.code}}.png" />
