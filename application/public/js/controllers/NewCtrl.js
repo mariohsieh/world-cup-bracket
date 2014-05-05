@@ -7,8 +7,23 @@ angular.module("NewCtrl", [])
 			//return items;
 		};
 	})
-	
-	.controller("NewController", function($scope, Nations) {
+
+/*
+	.filter('getSchedule', function() {
+		return function(items, $scope) {
+			var length = items.list.length;
+			var games = [];
+			for (var i = 0;i<length;i++) {
+				if (items.list[i].group == $scope.groupLetter)
+					games.push(items.list[i]);
+			}
+			//console.log(length);
+			return games;
+		};
+	})
+*/
+
+	.controller("NewController", function($scope, Nations, Schedule) {
 		
 		// set initial parameters on page enter
 		function initial() {
@@ -20,8 +35,9 @@ angular.module("NewCtrl", [])
 			headingFinals = "2014 World Cup Final";
 			descriptionFinals = "Please select a champion and final score";
 			
-			// load nations model into $scope
+			// load nations and schedule model into $scope
 			$scope.nations = Nations;
+			$scope.schedule = Schedule;
 			$scope.groups = ["<","A", "B", "C", "D", "E", "F", "G", "H",">"];
 
 			// create object for bracket selections
@@ -31,8 +47,10 @@ angular.module("NewCtrl", [])
 			$scope.picks["finals"] = {};
 			
 			// default to group A onload
-			$scope.teams = $scope.nations.getGroup('A');
 			$scope.groupLetter = 'A';
+			//$scope.teams = $scope.nations.getGroup('A');
+			$scope.teams = filterGroup(Nations, 'A');
+			$scope.games = filterGroup(Schedule, 'A');
 
 			// set initial variables on page load
 			firstPlace = "First Place";
@@ -78,6 +96,17 @@ angular.module("NewCtrl", [])
 			$scope.heading = headingFinals;
 			$scope.description = descriptionFinals;
 		}
+
+		function filterGroup(obj,letter) {
+			var length = obj.list.length;
+			var teams = [];
+			for (var i = 0;i<length;i++) {
+				if (obj.list[i].group == letter)
+					//console.log(Nations.list[i].name);
+					teams.push(obj.list[i]);
+			}
+			return teams;
+		}
 		
 		//// define $scope functions ////
 		// choose which group teams to display
@@ -104,11 +133,13 @@ angular.module("NewCtrl", [])
 					str = $scope.groups[index];
 				}
 			}
-						
-			$scope.teams = $scope.nations.getGroup(str);
+
+			$scope.groupLetter = str;						
+			//$scope.teams = $scope.nations.getGroup(str);
+			$scope.teams = filterGroup(Nations,str);
 			//console.log($scope.teams);
-			$scope.groupLetter = str;
-			
+			$scope.games = filterGroup(Schedule,str);
+
 			// update group winners if set
 			if (picks[str+1])
 				$scope.gfirst = picks[str+1]["name"];

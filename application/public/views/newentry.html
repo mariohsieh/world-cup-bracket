@@ -6,9 +6,7 @@
 			<button class="pull-right" ng-show="stageNavCheck()" ng-click="stageNav('Next')">Next</button>
 		</div>
 	</h1>
-	
 </header>
-
 <section class="row" ng-show="tourneyStage == 'groupStage'"> <!-- group stage -->
 	<article class="col-xs-12 col-lg-8 col-lg-offset-2"> <!-- group letter display -->
 		<ul class="">
@@ -16,10 +14,29 @@
 			<li class="inlineBlock gLetter text-center pointer" id="{{group}}" ng-repeat="group in groups" ng-click="selectGroup(group);groupLetter=(group)">{{group}}</li>
 		</ul>	
 	</article>
-	<article class="col-xs-12 col-lg-2 col-lg-offset-1"> <!-- group schedule -->
+	<article class="col-xs-12 col-lg-3 col-lg-offset-1"> <!-- group schedule -->
+		<!-- list group schedule here -->
 		<h3>Group {{groupLetter}} Schedule</h3>
+		<table>
+			<thead>
+				<tr>
+					<th>Match</th>
+					<th>Date</th>
+					<th>Teams</th>
+					<th>Location</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="game in games">
+					<td>{{game.match}}</td>
+					<td>{{game.date}}</td>
+					<td>{{game.team1}} vs {{game.team2}}</td>
+					<td>{{game.city}}</td>
+				</tr>
+			</tbody>
+		</table>
 	</article>
-	<article class="col-xs-12 col-lg-5"> <!-- display nations by group -->
+	<article class="col-xs-12 col-lg-4"> <!-- display nations by group -->
 		<!-- list group nations here -->
 		<ul>
 			<li class="gItem" ng-repeat="team in teams">
@@ -38,7 +55,7 @@
 	</article>
 	<article class="col-xs-12 col-lg-3 text-right"> <!-- display group winners -->
 		<!-- list winners here -->
-		<h3>Group {{ groupLetter }} Winners</h3>
+		<h3>Group {{groupLetter}} Winners</h3>
 		<ul>
 			<!-- <li ng-show="!gfirst">First Place</li> -->
 			<li><h3>{{gfirst}}</h3></li>
@@ -48,7 +65,6 @@
 		</ul>
 	</article> 
 </section>
-
 <section class="row" ng-show="tourneyStage == 'koStage'"> <!-- knockout stage -->
 	<article class="bracketWrap pull-left text-center" ng-show="bracketLeft">
 		<header> <!-- show the rounds up top -->

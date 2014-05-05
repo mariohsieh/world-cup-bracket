@@ -5,6 +5,7 @@ angular.module("worldcupApp", [
 	"HomeCtrl",
 	"AllCtrl",
 	"NewCtrl",
-	"nationService"
+	"nationService",
+	"scheduleService"
 ]);
 

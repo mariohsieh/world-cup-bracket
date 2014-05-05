@@ -1,8 +1,10 @@
 angular.module('scheduleService',[])
 
+	// list of group stage schedule
 	.factory('Schedule', function() {
 		var Schedule = {};
 		
+		// list all group stage games and info
 		Schedule.list = [
 			{
 				"match" : 01,
@@ -391,4 +393,4 @@ angular.module('scheduleService',[])
 		];
 				
 		return Schedule;
-	}
+	});
