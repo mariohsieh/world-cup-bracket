@@ -6,6 +6,7 @@ angular.module("worldcupApp", [
 	"AllCtrl",
 	"NewCtrl",
 	"nationService",
-	"scheduleService"
+	"scheduleService",
+	"bracketService"
 ]);
 

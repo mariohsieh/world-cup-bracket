@@ -8,7 +8,7 @@
 		"type": "git",
 		"url": "http://github.com/mariohsieh/world-cup-bracket.git"
 	},
-	"main": "app.js",
+	"main": "server.js",
 	"dependencies": {
 		"express": "latest",
 		"swig": "latest",

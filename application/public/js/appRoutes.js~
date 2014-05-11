@@ -21,7 +21,7 @@ angular.module("appRoutes", [])
 			// display one bracket
 			.when("/brackets/:id", {
 				templateUrl: "views/singlebracket.html",
-				controller: "SingleController"
+				controller: "SingleBracketController"
 			})		
 */		
 			// for routes that don't exist

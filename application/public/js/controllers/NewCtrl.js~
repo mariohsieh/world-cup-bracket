@@ -242,8 +242,17 @@ angular.module("NewCtrl", [])
 
 		// submit the new bracket
 		$scope.createBracket = function() {
+/*			
+			$http.post('/api/brackets', $scope.picks)
+			.success(function() {
+				alert("hi");
+			})
+			.error(function() {
+				alert("bye");
+			});
+*/			
 
-			Brackets.create($scope.picks)
+			Brackets.create($scope.testObj)
 				.success(function(data) {
 					// display some success message to user
 					console.log("yes");
@@ -251,6 +260,7 @@ angular.module("NewCtrl", [])
 				.error(function(data) {
 					// display some error message to user
 					console.log(data);
+					console.log("no");
 				});
 		}
 		

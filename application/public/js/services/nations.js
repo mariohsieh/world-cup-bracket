@@ -455,7 +455,7 @@ angular.module('nationService',[])
 				"group" : "H"
 			}
 		];
-		
+/*		
 		// select group
 		Nations.getGroup = function(data) {
 			var length = Nations.list.length;
@@ -467,6 +467,6 @@ angular.module('nationService',[])
 			}
 			return teams;
 		}
-
+*/
 		return Nations;
 	});
