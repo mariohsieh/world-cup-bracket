@@ -1,3 +1,36 @@
-<h1>All Brackets</h1>
+<header class="row titleWrap"> <!-- Page title & description -->
+	<h1 class="col-xs-12 col-lg-8 col-lg-offset-2">
+		<span class="pageTitle">{{heading}}</span>&nbsp;<span class="pageDescription">{{description}}</span>
+<!--		
+		<div class="stageNavWrap pull-right">
+			<button class="pull-left" ng-show="tourneyStage != 'groupStage'" ng-click="stageNav('Back')">Back</button>
+			<button class="pull-right" ng-show="stageNavCheck()" ng-click="stageNav('Next')">Next</button>
+		</div>
+-->
+	</h1>
+</header>
+<section class="row">
 
-<p>{{ output }}</p>
+	<arcticle class="col-xs-12 col-lg-8 col-lg-offset-2">
+		<table class="col-xs-12">
+			<thead>
+				<tr>
+					<th>Bracket Name</th>
+					<th>Champion</th>
+					<th>Runner-up</th>
+					<th>Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- ng-repeat the rows -->
+				<tr ng-repeat="bracket in brackets">
+					<td>{{bracket._id}}</td>
+					<td>{{bracket.finals.CHAMPS.name}}</td>
+					<td>{{bracket.finals.SECOND.name}}</td>
+					<td>will add later</td>
+				</tr>
+			</tbody>
+		</table>
+	</arcticle>
+
+</section>

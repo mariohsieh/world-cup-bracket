@@ -130,6 +130,10 @@ module.exports = mongoose.model('Bracket', {
 		CHAMPS:	{
 			code: String,
 			name: String
+		},
+		SECOND: {
+			code: String,
+			name: String
 		}
 	}
 });

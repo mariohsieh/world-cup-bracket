@@ -4,16 +4,20 @@ var Bracket = require('./models/bracket');
 module.exports = function(app) {
 	
 	// define RESTful api   ***********************************
-/*	
-	// for brackets
+	
+	// get all brackets
 	app.get('/api/brackets', function(req,res) {
-		// grab all brackets from db
+		// use find() to get all docs from db
 		Bracket.find(function(err,doc) {
 			if (err) throw err;
+			//console.log(doc);
 			res.json(doc);
 		});
 	});
-*/
+	
+	// get one bracket
+	// write code for one bracket
+	
 	// create new brackets
 	app.post('/api/brackets', function(req,res) {
 		console.log(req.body);
@@ -21,7 +25,7 @@ module.exports = function(app) {
 		var reqBody = req.body;
 		
 		var bracketObj = {
-			_id: String,
+			_id: reqBody._id,
 			group: { 
 				A1: { 
 					code: reqBody.group.A1.code,
@@ -150,7 +154,11 @@ module.exports = function(app) {
 				CHAMPS:	{
 					code: reqBody.finals.CHAMPS.code,
 					name: reqBody.finals.CHAMPS.name
-				}
+				},
+				SECOND:	{
+					code: reqBody.finals.SECOND.code,
+					name: reqBody.finals.SECOND.name
+				}				
 			}
 		};
 		
@@ -162,22 +170,7 @@ module.exports = function(app) {
 			else
 				res.json(doc);
 		});
-/*		
-		// create a bracket
-		Bracket.create({
-
-			finals: {
-				CHAMPS:	{
-					code: req.body.finals.CHAMPS.code,
-					name: req.body.finals.CHAMPS.name
-				}
-			}
-
-		function(err,doc) {
-			if (err) throw err;
-			//res.json(doc);
-		}
-*/ 
+		
 	});	
 
 	// send all routes to angular front end to be defined

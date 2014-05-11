@@ -243,15 +243,22 @@ angular.module("NewCtrl", [])
 		// submit the new bracket
 		$scope.createBracket = function() {
 
+			if ($scope.picks.finals.CHAMPS == $scope.picks.ko.F2)
+				$scope.picks.finals.SECOND = $scope.picks.ko.F1;
+			else
+				$scope.picks.finals.SECOND = $scope.picks.ko.F2;
+			//console.log($scope.picks);
+
 			Brackets.create($scope.picks)
 				.success(function(data) {
 					// display some success message to user
-					console.log("yes");
+					alert("yes");
 				})
 				.error(function(data) {
 					// display some error message to user
 					console.log(data);
 				});
+
 		}
 		
 		// initialize new bracket
