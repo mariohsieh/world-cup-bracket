@@ -1,6 +1,6 @@
 // load Brackets model
-var Bracket = require('./models/bracket'),
-	Counter = require('./models/counter');
+var Bracket = require('./models/bracket');
+	//Counter = require('./models/counter');
 
 module.exports = function(app) {
 	

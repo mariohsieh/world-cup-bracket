@@ -153,6 +153,16 @@ angular.module("NewCtrl", [])
 				$scope.gsecond = secondPlace;
 		}
 
+		$scope.moreInfo = function(data) {
+			$scope.showOverlay = true;
+			console.log(data);
+			$scope.details = data;
+		}
+
+		$scope.exitDetails = function() {
+			$scope.showOverlay = false;
+		}
+
 		// choose group winners
 		$scope.groupWinner = function(obj) {
 			//console.log(obj);

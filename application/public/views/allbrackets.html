@@ -13,7 +13,28 @@
 	<article class="overlayWrap" ng-show="showOverlay">
 	<!--<article class="overlayWrap">-->
 		<div class="btnDel pointer pull-right" ng-click="exitSingle()"></div>
-		<aside class="overlay"></aside>
+		<aside class="overlay">
+			<section class="row">
+				<div class="col-xs-12">
+					<h3>Bracket Name: {{single.name}}</h3>
+				</div>
+			</section>
+			<section class="row text-center">
+				<div class="col-xs-4">
+					<h4>Runner-up:</h4>
+					<img class="gFlag" alt="{{single.finals.SECOND.name}}" src="../img/flags/{{single.finals.SECOND.code}}.png" />
+					{{single.finals.SECOND.name}}
+				</div>
+				<div class="col-xs-4">
+					<h3>Champions: {{single.finals.CHAMPS.name}}</h3>
+					<img class="gFlag" alt="{{single.finals.CHAMPS.name}}" src="../img/flags/{{single.finals.CHAMPS.code}}.png" />
+					{{single.finals.CHAMPS.name}}
+				</div>
+				<div class="col-xs-4">
+					<h4>Third Place:</h4>
+				</div>
+			</section>
+		</aside>
 	</article>
 	<article class="col-xs-12 col-lg-8 col-lg-offset-2">
 
@@ -21,7 +42,7 @@
 			<thead>
 				<tr>
 					<th>Bracket Name</th>
-					<th>Champion</th>
+					<th>Champions</th>
 					<th>Runner-up</th>
 					<th>Date Added</th>
 				</tr>

@@ -13,6 +13,7 @@ angular.module("AllCtrl", [])
 			// view the data of a single bracket
 			$scope.showOverlay = true;
 			console.log(data);
+			$scope.single = data;
 		}
 		
 		$scope.exitSingle = function() {

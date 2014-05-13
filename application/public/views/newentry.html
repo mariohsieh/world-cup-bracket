@@ -8,7 +8,14 @@
 	</h1>
 </header>
 <section class="row" ng-show="tourneyStage == 'groupStage'"> <!-- group stage -->
-	<aside class="overlay"></aside>
+	<article class="overlayWrap" ng-show="showOverlay">
+		<div class="btnDel pointer pull-right" ng-click="exitDetails()"></div>			
+		<aside class="overlay">
+<!--   
+			<h3>{{details.name}}</h3>
+-->
+		</aside>
+	</article>
 	<article class="col-xs-12 col-lg-8 col-lg-offset-2"> <!-- group letter display -->
 		<ul class="">
 			<!-- list groups here -->
@@ -45,7 +52,7 @@
 					<img class="gFlag" alt="{{team.name}}" src="../img/flags/{{team.code}}.png" />
 					{{team.name}}
 				</span>
-				<span class="pointer pull-right">more info</span>
+				<span class="pointer pull-right" ng-click="moreInfo(team)">more info</span>
 <!--				
 				<h2 ng-click="">
 					<img src="../img/flags/{{team.code}}.png" />{{ team.name }}

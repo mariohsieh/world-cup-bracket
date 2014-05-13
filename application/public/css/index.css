@@ -85,16 +85,15 @@ li {
 }
 
 .overlay {
-	background-color: black;
+	background-color: rgba(0,0,0,.85);
 	height: 90%;
 	width:  90%;
 	margin:  0 auto;
-	opacity: .75;
+	padding: 10px 25px 20px;
 	color: #FFFFFF;
 	border-radius: 20px;
 	z-index: 60;	
 }
-
 
 
 /***** group stage *****/
@@ -125,6 +124,7 @@ li {
 .dFlag {
 	
 }
+
 
 /***** ko stage *****/
 .roundDisplayWrap {
@@ -241,7 +241,9 @@ hr {
 /***** all brackets *****/
 
 /***** single bracket *****/
-
+.singleFlag {
+	width: 50%;
+}
 
 
 
