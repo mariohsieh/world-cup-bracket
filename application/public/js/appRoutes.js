@@ -17,13 +17,13 @@ angular.module("appRoutes", [])
 				templateUrl: "views/newentry.html",
 				controller: "NewController"
 			})		
-/*						
+
 			// display one bracket
 			.when("/brackets/:id", {
 				templateUrl: "views/singlebracket.html",
 				controller: "SingleController"
 			})		
-*/		
+		
 			// for routes that don't exist
 			.otherwise({
 				//template: "404, Page Not Found"

@@ -34,7 +34,7 @@ li {
 
 /* layout */
 .container-fluid {
-	margin-top: 55px;
+	padding-top: 55px;
 }
 
 .titleWrap {
@@ -60,6 +60,42 @@ li {
 .middle {
 	vertical-align: middle;
 }
+
+.overlayWrap {
+	position: absolute;
+	top: 10%;
+	left: 12.5%;
+	right: 12.5%;
+	bottom: 5%;
+	height: 85%;
+	width:  75%;
+	z-index: 50;	
+}
+
+.btnDel {
+	position: relative;
+	width: 30px;
+	height: 30px;
+	border-radius: 100%;
+	margin-top: -10px;
+	margin-right: 50px;
+	border: 3px solid green;
+	background-color: red;
+	z-index: 70;
+}
+
+.overlay {
+	background-color: black;
+	height: 90%;
+	width:  90%;
+	margin:  0 auto;
+	opacity: .75;
+	color: #FFFFFF;
+	border-radius: 20px;
+	z-index: 60;	
+}
+
+
 
 /***** group stage *****/
 .gLetter {
@@ -200,3 +236,13 @@ hr {
 	width: 75px;
 	height: 75px;
 }
+
+
+/***** all brackets *****/
+
+/***** single bracket *****/
+
+
+
+
+

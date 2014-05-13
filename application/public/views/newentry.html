@@ -8,6 +8,7 @@
 	</h1>
 </header>
 <section class="row" ng-show="tourneyStage == 'groupStage'"> <!-- group stage -->
+	<aside class="overlay"></aside>
 	<article class="col-xs-12 col-lg-8 col-lg-offset-2"> <!-- group letter display -->
 		<ul class="">
 			<!-- list groups here -->
@@ -330,7 +331,7 @@
 		</div>
 -->
 		<form>
-			<input type="text" ng-model="picks._id" placeholder="Name your bracket" ng-show="picks.finals.CHAMPS.name" />
+			<input type="text" ng-model="picks.name" placeholder="Name your bracket" ng-show="picks.finals.CHAMPS.name" />
 			<br />
 			<button ng-click="createBracket()">submit!</button>
 		</form>

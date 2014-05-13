@@ -1,5 +1,6 @@
 // load Brackets model
-var Bracket = require('./models/bracket');
+var Bracket = require('./models/bracket'),
+	Counter = require('./models/counter');
 
 module.exports = function(app) {
 	
@@ -20,12 +21,24 @@ module.exports = function(app) {
 	
 	// create new brackets
 	app.post('/api/brackets', function(req,res) {
-		console.log(req.body);
-
-		var reqBody = req.body;
 		
+		// get next id from counters db
+		function getNextCounter(id) {
+			var nextid = Counter.findAndModify(
+				{
+					query: { _id: id },
+					update: { $inc: { seq: 1 } },
+					new: true
+				}
+			);
+			return nextid.seq;
+		}
+		
+		console.log(req.body);
+		var reqBody = req.body;
 		var bracketObj = {
-			_id: reqBody._id,
+			//_id: getNextCounter("userid"),
+			name: reqBody.name,
 			group: { 
 				A1: { 
 					code: reqBody.group.A1.code,

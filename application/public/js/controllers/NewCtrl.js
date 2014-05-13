@@ -249,6 +249,10 @@ angular.module("NewCtrl", [])
 				$scope.picks.finals.SECOND = $scope.picks.ko.F2;
 			//console.log($scope.picks);
 
+			// get current date
+			//var submitDate = new Date();
+			//$scope.picks.date = submitDate;
+
 			Brackets.create($scope.picks)
 				.success(function(data) {
 					// display some success message to user
