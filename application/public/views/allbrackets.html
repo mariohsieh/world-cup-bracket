@@ -1,12 +1,10 @@
 <header class="row titleWrap"> <!-- Page title & description -->
 	<h1 class="col-xs-12 col-lg-8 col-lg-offset-2">
-		<span class="pageTitle">{{heading}}</span>&nbsp;<span class="pageDescription">{{description}}</span>
-<!--		
-		<div class="stageNavWrap pull-right">
-			<button class="pull-left" ng-show="tourneyStage != 'groupStage'" ng-click="stageNav('Back')">Back</button>
-			<button class="pull-right" ng-show="stageNavCheck()" ng-click="stageNav('Next')">Next</button>
+		<span class="pageTitle">{{heading}}</span>&nbsp;<span class="pageDescription">{{description}}</span>		
+		<div class="pull-right">
+			<span class="pointer pull-left">&#60;</span>
+			<span class="pointer pull-right" >&#62;</span>
 		</div>
--->
 	</h1>
 </header>
 <section class="row">
@@ -36,24 +34,26 @@
 			</section>
 		</aside>
 	</article>
-	<article class="col-xs-12 col-lg-8 col-lg-offset-2">
+	<article class="col-xs-12 col-lg-10 col-lg-offset-1">
 
 		<table class="col-xs-12">
 			<thead>
 				<tr>
 					<th>Bracket Name</th>
-					<th>Champions</th>
-					<th>Runner-up</th>
-					<th>Date Added</th>
+					<th class="text-center">Champions</th>
+					<th class="text-center">Runner-up</th>
+					<th class="text-center">Third Place</th>
+					<th class="text-right">Date Added</th>
 				</tr>
 			</thead>
 			<tbody>
 				<!-- ng-repeat the rows -->
-				<tr ng-repeat="bracket in brackets">
-					<td><span class="pointer" ng-click="viewSingle(bracket)">{{bracket.name}}</span></td>
-					<td>{{bracket.finals.CHAMPS.name}}</td>
-					<td>{{bracket.finals.SECOND.name}}</td>
-					<td>will add later</td>
+				<tr class="pointer" ng-repeat="bracket in brackets" ng-click="viewSingle(bracket)">
+					<td>{{bracket.name}}</td>
+					<td class="text-center">{{bracket.finals.CHAMPS.name}}</td>
+					<td class="text-center">{{bracket.finals.SECOND.name}}</td>
+					<td class="text-center">under construction</td>
+					<td class="text-right">will add later</td>
 				</tr>
 			</tbody>
 		</table>

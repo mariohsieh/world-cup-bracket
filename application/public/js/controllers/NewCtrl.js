@@ -263,6 +263,7 @@ angular.module("NewCtrl", [])
 			//var submitDate = new Date();
 			//$scope.picks.date = submitDate;
 
+			// call function to send object to back-end
 			Brackets.create($scope.picks)
 				.success(function(data) {
 					// display some success message to user

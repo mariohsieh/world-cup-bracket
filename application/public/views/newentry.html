@@ -10,10 +10,8 @@
 <section class="row" ng-show="tourneyStage == 'groupStage'"> <!-- group stage -->
 	<article class="overlayWrap" ng-show="showOverlay">
 		<div class="btnDel pointer pull-right" ng-click="exitDetails()"></div>			
-		<aside class="overlay">
-<!--   
+		<aside class="overlay">   
 			<h3>{{details.name}}</h3>
--->
 		</aside>
 	</article>
 	<article class="col-xs-12 col-lg-8 col-lg-offset-2"> <!-- group letter display -->
@@ -74,15 +72,11 @@
 	</article> 
 </section>
 <section class="row" ng-show="tourneyStage == 'koStage'"> <!-- knockout stage -->
-	<article class="bracketWrap pull-left text-center" ng-show="bracketLeft">
-		<header> <!-- show the rounds up top -->
-			<ul class="roundDisplayWrap"> 
-				<li class="roundDisplayItem" ng-repeat="round in rounds">{{round}}</li>
-			</ul>
-		</header>
+	<article class="col-xs-12 col-lg-5 col-lg-offset-1 text-center">
 		<div class="roundFinalsWrap"> <!-- top left -->
 			<div class="winnersLine finals pull-right bracketBottomLine">
-				<span class="teamDisplay">{{picks.ko.F1.name}}</span>
+				<!--<span class="teamDisplay">{{picks.ko.F1.name}}</span>-->
+				<img class="gFlag" alt="{{picks.ko.F1.name}}" src="../img/flags/{{picks.ko.F1.code}}.png" ng-show="picks.ko.F1.name" />
 			</div>
 			<div class="roundSemiWrap">
 				<div class="winnersLine semifinals pull-right bracketBottomLine">
@@ -187,16 +181,8 @@
 			</div>
 		</div>
 	</article>
-	<article class="indication pull-left text-center">
-		<div class="arrow pointer" ng-click="bracketSwitch()">{{ indicator }}</div>
-		<!--<i class="fa fa-chevron-{{indicator}}" ng-click="bracketSwitch()"></i>-->
-	</article>
-	<article class="bracketWrap pull-left text-center" ng-show="!bracketLeft">
-		<header> <!-- show the rounds up top -->
-			<ul class="roundDisplayWrap"> 
-				<li class="roundDisplayItem" ng-repeat="round in rounds | reverse">{{round}}</li>
-			</ul>
-		</header>
+	<!-- indicator code-->
+	<article class="col-xs-12 col-lg-5 text-center">
 		<div class="roundFinalsWrap"> <!-- top right -->
 			<div class="winnersLine finals pull-left bracketBottomLine">
 				<span class="teamDisplay">{{picks.ko.F2.name}}</span>
@@ -307,7 +293,7 @@
 					<div class="roundSweetWrap pull-right"></div>
 				</div>
 			</div>
-		</div>
+		</div>	
 	</article>
 </section>
 <section class="row" ng-show="tourneyStage == 'finalsStage'">
