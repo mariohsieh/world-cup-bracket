@@ -258,7 +258,9 @@ angular.module("NewCtrl", [])
 				else
 					$scope.thirdPlaceB = $scope.picks.ko.SF3;
 										
-			} else { 	// finals			
+			} else if ($scope.tourneyStage == "finalsStage") {
+				
+				//  championship game
 				$scope.picks["finals"][str2] = $scope.picks["ko"][str1];
 			}
 		}
@@ -270,11 +272,10 @@ angular.module("NewCtrl", [])
 				$scope.picks.finals.SECOND = $scope.picks.ko.F1;
 			else
 				$scope.picks.finals.SECOND = $scope.picks.ko.F2;
+			
 			//console.log($scope.picks);
-
-			// get current date
-			//var submitDate = new Date();
-			//$scope.picks.date = submitDate;
+			
+			$scope.picks.date = getDate();
 
 			// call function to send object to back-end
 			Brackets.create($scope.picks)
@@ -288,7 +289,21 @@ angular.module("NewCtrl", [])
 				});
 
 		}
+
+		function getDate() {
+			// get current date
+			var nowDate = new Date();			
+			var date = [ nowDate.getFullYear(), nowDate.getMonth()+1, nowDate.getDate()];
+			
+			if (date[1].toString().length == 1) {
+				date[1] = "0" + date[1];
+				parseInt(date[1]);
+			}
+			
+			return date.join("-");
+		}
 		
+		console.log(getDate());
 		// initialize new bracket
 		initial();
 	});

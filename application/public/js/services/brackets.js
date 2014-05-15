@@ -9,7 +9,7 @@ angular.module('bracketService',[])
 			},
 			
 			create : function(bracketData) {
-				console.log(bracketData);
+				//console.log(bracketData);
 				return $http.post('/api/brackets', bracketData);
 			}
 		}

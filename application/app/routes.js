@@ -39,6 +39,7 @@ module.exports = function(app) {
 		var bracketObj = {
 			//_id: getNextCounter("userid"),
 			name: reqBody.name,
+			date: reqBody.date,
 			group: { 
 				A1: { 
 					code: reqBody.group.A1.code,

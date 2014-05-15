@@ -371,7 +371,10 @@
 		<article class="col-xs-4">
 			<!-- user chooses winner and score/options-->
 			<h2 class="fTeamDisplay text-center" ng-show="!picks.finals.CHAMPS.name">(CHAMPIONS)</h2>
-			<h2 class="fTeamDisplay text-center" ng-show="picks.finals.CHAMPS.name">{{picks.finals.CHAMPS.name}}</h2>
+			<h2 class="fTeamDisplay text-center" ng-show="picks.finals.CHAMPS.name">
+				<img class="gFlag" alt="{{picks.finals.CHAMPS.code}}" src="../img/flags/{{picks.finals.CHAMPS.code}}.png" />
+				{{picks.finals.CHAMPS.name}}
+				</h2>
 			<hr />
 			<h3 class="text-center">2014 World Cup Championship Game</h3>
 			<!-- input for final score -->		

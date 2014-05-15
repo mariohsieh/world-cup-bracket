@@ -12,20 +12,20 @@ angular.module("AllCtrl", [])
 		$scope.viewSingle = function(data) {
 			// view the data of a single bracket
 			$scope.showOverlay = true;
-			console.log(data);
+			//console.log(data);
 			$scope.single = data;
 		}
 		
 		$scope.exitSingle = function() {
 			$scope.showOverlay = false;
 			console.log('yes');
-			console.log($scope.showOverlay);
+			//console.log($scope.showOverlay);
 		}
 		// gather all brackets command
 		Brackets.get()
 			.success(function(data) {
 				// display some success message to user
-				//console.log(data);
+				console.log(data);
 				$scope.brackets = data;
 			})
 			.error(function(data) {

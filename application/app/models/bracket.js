@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 module.exports = mongoose.model('Bracket', {
 	//_id: String,
 	name: String,
+	date: String,
 	group: { 
 		A1: { 
 			code: String,

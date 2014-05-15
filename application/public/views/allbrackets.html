@@ -24,12 +24,14 @@
 					{{single.finals.SECOND.name}}
 				</div>
 				<div class="col-xs-4">
-					<h3>Champions: {{single.finals.CHAMPS.name}}</h3>
+					<h3>Champions:</h3>
 					<img class="gFlag" alt="{{single.finals.CHAMPS.name}}" src="../img/flags/{{single.finals.CHAMPS.code}}.png" />
 					{{single.finals.CHAMPS.name}}
 				</div>
 				<div class="col-xs-4">
-					<h4>Third Place: {{single.finals.THIRD.name}}</h4>
+					<h4>Third Place:</h4>
+					<img class="gFlag" alt="{{single.finals.THIRD.name}}" src="../img/flags/{{single.finals.THIRD.code}}.png" />
+					{{single.finals.THIRD.name}}					
 				</div>
 			</section>
 		</aside>
@@ -53,7 +55,7 @@
 					<td class="text-center">{{bracket.finals.CHAMPS.name}}</td>
 					<td class="text-center">{{bracket.finals.SECOND.name}}</td>
 					<td class="text-center">{{bracket.finals.THIRD.name}}</td>
-					<td class="text-right">will add later</td>
+					<td class="text-right">{{bracket.date}}</td>
 				</tr>
 			</tbody>
 		</table>
