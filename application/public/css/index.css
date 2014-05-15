@@ -37,10 +37,6 @@ li {
 	padding-top: 55px;
 }
 
-.titleWrap {
-	margin-bottom: 20px;
-}
-
 .pageTitle {
 	font-size: 1.2em;
 	font-variant: small-caps;
@@ -128,10 +124,12 @@ li {
 
 /***** ko stage *****/
 .roundDisplayWrap {
-	width: 860px;
+	width: 100%;
 }
-.roundDisplayItem {
-	width: 215px;
+.roundDisplayWrap li {
+	font-size: 1.2em;
+	font-weight: bold;
+	width: 150px;
 	display: inline-block;
 }
 
@@ -164,28 +162,28 @@ li {
 	font-size: 10em;
 }
 
-/* rounds */
-.roundDisplayWrap {
-	font-size: 1.3em;
+/* rounds layout */
+#koRoundDisplay {
+	margin-bottom: 10px;
 }
 
 .roundFinalsWrap {
-	height: 320px;
+	height: 360px;
 	width: 600px;
 }
 
 .roundSemiWrap {
-	height: 160px;
+	height: 180px;
 	width: 450px;
 }
 
 .roundQuarterWrap {
-	height: 80px;
+	height: 90px;
 	width: 300px;
 }
 
 .roundSweetWrap {
-	height: 40px;
+	height: 45px;
 	width: 150px;
 }
 
@@ -195,8 +193,8 @@ li {
 	width: 150px;
 }
 
-.sweetsixteen {
-	line-height: 3em;
+.sweetsixteen img{
+	line-height: 1em;
 }
 
 .quarterfinals {
@@ -204,11 +202,11 @@ li {
 }
 
 .semifinals {
-	line-height: 18em;
+	line-height: 19em;
 }
 
 .finals {
-	line-height: 38em;
+	line-height: 41em;
 }
 
 .teamDisplay {
@@ -216,6 +214,10 @@ li {
 	cursor: pointer;
 }
 
+.kFlag {
+	width: 60px;
+	cursor: pointer;
+}
 
 /***** finals stage *****/
 .fFlag {

@@ -171,7 +171,11 @@ module.exports = function(app) {
 				SECOND:	{
 					code: reqBody.finals.SECOND.code,
 					name: reqBody.finals.SECOND.name
-				}				
+				},
+				THIRD:	{
+					code: reqBody.finals.THIRD.code,
+					name: reqBody.finals.THIRD.name
+				}									
 			}
 		};
 		
