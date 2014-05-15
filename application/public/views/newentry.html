@@ -338,42 +338,68 @@
 		</div>	
 	</article>
 </section>
-<section class="row" ng-show="tourneyStage == 'finalsStage'">
-	<article class="col-xs-4">
-		<img class="fFlag" alt="{{picks.ko.F1.name}}" src="../img/flags/{{picks.ko.F1.code}}.png" />
-		<h2 class="fTeamDisplay pointer" ng-click="selectWinner('F1', 'CHAMPS')">{{picks.ko.F1.name}}</h2>
-	</article>
-	<article class="col-xs-4">
-		<!-- user chooses winner and score/options-->
-		<h2 class="fTeamDisplay" ng-show="!picks.finals.CHAMPS.name">(Select a winner)</h2>
-		<h2 class="fTeamDisplay" ng-show="picks.finals.CHAMPS.name">{{picks.finals.CHAMPS.name}}</h2>
-		<hr />
-		<h3 class="text-center">2014 World Cup Champions</h3>
-		<!-- input for final score -->		
-		<!-- radio buttons/check buttons for overtime, penalty shootout-->
-<!--		
-		<div class="text-center" ng-show="picks.finals.CHAMPS.name">
-			<input class="fScore text-center" type="number" min="0" max="9" value="0" />
-			<h2 class="inlineBlock">-</h2>
-			<input class="fScore text-center" type="number" min="0" max="9" value="0" />
-			<h3>Final Score</h3>
-		</div>
--->		
-<!--
-		<div class="text-center" ng-show="picks.finals.CHAMPS.name">
-			<span>A.E.T.</span><input type="checkbox" />
-			<span>Penalty Shootout</span><input type="checkbox" />
-		</div>
--->
-		<form>
-			<input type="text" ng-model="picks.name" placeholder="Name your bracket" ng-show="picks.finals.CHAMPS.name" />
-			<br />
-			<button ng-click="createBracket()">submit!</button>
-		</form>
-		
-	</article>
-	<article class="col-xs-4">
-		<img class="fFlag" alt="{{picks.ko.F2.name}}" src="../img/flags/{{picks.ko.F2.code}}.png" />
-		<h2 class="fTeamDisplay pointer" ng-click="selectWinner('F2', 'CHAMPS')">{{picks.ko.F2.name}}</h2>
-	</article>
+<section ng-show="tourneyStage == 'finalsStage'"> <!-- finals stage -->
+	<div class="row"> <!-- third place game-->
+		<article class="col-xs-12 col-lg-4 col-lg-offset-1">
+			<h3 class="text-right">
+				<span class="pointer" ng-click="picks.finals.THIRD = thirdPlaceA">
+					{{thirdPlaceA.name}}
+					<img class="gFlag" alt="{{thirdPlaceA.code}}" src="../img/flags/{{thirdPlaceA.code}}.png" />
+				</span>
+			</h3>
+		</article>
+		<article class="col-xs-12 col-lg-2">
+			<h3 class="text-center" ng-show="!picks.finals.THIRD.name">(Third Place Winner)</h2>
+			<h3 class="text-center" ng-show="picks.finals.THIRD.name">{{picks.finals.THIRD.name}}</h2>
+			<hr />
+			<h4 class="text-center">Third Place Game</h3>			
+		</article>
+		<article class="col-xs-12 col-lg-4">
+			<h3 class="text-left">
+				<span class="pointer" ng-click="picks.finals.THIRD = thirdPlaceB">
+					<img class="gFlag" alt="{{thirdPlaceB.code}}" src="../img/flags/{{thirdPlaceB.code}}.png" />
+					{{thirdPlaceB.name}}
+				</span>
+			</h3>
+		</article>
+	</div>
+	<div class="row"> <!-- championship game -->
+		<article class="col-xs-12 col-lg-3 col-lg-offset-1">
+			<img class="fFlag" alt="{{picks.ko.F1.name}}" src="../img/flags/{{picks.ko.F1.code}}.png" />
+			<h2 class="fTeamDisplay pointer" ng-click="selectWinner('F1', 'CHAMPS')">{{picks.ko.F1.name}}</h2>
+		</article>
+		<article class="col-xs-4">
+			<!-- user chooses winner and score/options-->
+			<h2 class="fTeamDisplay text-center" ng-show="!picks.finals.CHAMPS.name">(CHAMPIONS)</h2>
+			<h2 class="fTeamDisplay text-center" ng-show="picks.finals.CHAMPS.name">{{picks.finals.CHAMPS.name}}</h2>
+			<hr />
+			<h3 class="text-center">2014 World Cup Championship Game</h3>
+			<!-- input for final score -->		
+			<!-- radio buttons/check buttons for overtime, penalty shootout-->
+	<!--		
+			<div class="text-center" ng-show="picks.finals.CHAMPS.name">
+				<input class="fScore text-center" type="number" min="0" max="9" value="0" />
+				<h2 class="inlineBlock">-</h2>
+				<input class="fScore text-center" type="number" min="0" max="9" value="0" />
+				<h3>Final Score</h3>
+			</div>
+	-->		
+	<!--
+			<div class="text-center" ng-show="picks.finals.CHAMPS.name">
+				<span>A.E.T.</span><input type="checkbox" />
+				<span>Penalty Shootout</span><input type="checkbox" />
+			</div>
+	-->
+			<form class="text-center">
+				<input class="text-center" type="text" placeholder="Name your bracket" ng-model="picks.name" ng-show="picks.finals.CHAMPS.name" />
+				<br />
+				<button ng-show="picks.name" ng-click="createBracket()">submit!</button>
+			</form>
+			
+		</article>
+		<article class="col-xs-4 col-lg-3">
+			<img class="fFlag" alt="{{picks.ko.F2.name}}" src="../img/flags/{{picks.ko.F2.code}}.png" />
+			<h2 class="fTeamDisplay pointer" ng-click="selectWinner('F2', 'CHAMPS')">{{picks.ko.F2.name}}</h2>
+		</article>
+	</div>
 </section>

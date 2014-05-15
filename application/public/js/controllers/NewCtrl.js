@@ -246,8 +246,21 @@ angular.module("NewCtrl", [])
 					$scope.picks["ko"][str2] = $scope.picks["group"][str1];
 				else // all other rounds in KO stage
 					$scope.picks["ko"][str2] = $scope.picks["ko"][str1];
-			} else 	// final game
+				
+				// third place teams
+				if ($scope.picks.ko.F1 == $scope.picks.ko.SF1)
+					$scope.thirdPlaceA = $scope.picks.ko.SF2;
+				else
+					$scope.thirdPlaceA = $scope.picks.ko.SF1;
+					
+				if ($scope.picks.ko.F2 == $scope.picks.ko.SF3)
+					$scope.thirdPlaceB = $scope.picks.ko.SF4;
+				else
+					$scope.thirdPlaceB = $scope.picks.ko.SF3;
+										
+			} else { 	// finals			
 				$scope.picks["finals"][str2] = $scope.picks["ko"][str1];
+			}
 		}
 
 		// submit the new bracket
