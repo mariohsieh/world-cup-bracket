@@ -37,6 +37,12 @@ li {
 	padding-top: 55px;
 }
 
+.pageWrap {
+	/*margin: 20px auto;*/
+	padding: 15px;
+	font-size: 2.3em;
+}
+
 .pageTitle {
 	font-size: 1.2em;
 	font-variant: small-caps;
@@ -59,11 +65,11 @@ li {
 
 .overlayWrap {
 	position: absolute;
-	top: 10%;
+	top: 75px;
 	left: 12.5%;
 	right: 12.5%;
-	bottom: 5%;
-	height: 85%;
+	height: 90%;
+	min-height: 675px;
 	width:  75%;
 	z-index: 50;	
 }
@@ -73,8 +79,8 @@ li {
 	width: 30px;
 	height: 30px;
 	border-radius: 100%;
-	margin-top: -10px;
-	margin-right: 50px;
+	margin-top: -23px;
+	margin-right: -40px;
 	border: 3px solid green;
 	background-color: red;
 	z-index: 70;
@@ -242,10 +248,38 @@ hr {
 /***** all brackets *****/
 
 /***** single bracket *****/
-.singleFlag {
-	width: 50%;
+#singleWrap h2 {
+	margin: 10px auto;
 }
 
+#singleKO img {
+	display: block;
+	width: 50px;
+	margin: 0px auto 5px;
+	
+}
 
+#singleWinner h4 {
+	font-size: 1.4em;
+	margin-top: 5px;
+}
 
+#singleKO article {
+	height: 400px;
+}
 
+#singleKO span {
+	display: block;
+	text-decoration: underline;
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+}
+
+#singleKO table {
+	margin: 0 auto;
+}
+#singleKO td {
+	padding: 0 10px;
+	vertical-align: middle;
+}

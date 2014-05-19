@@ -2,10 +2,10 @@
 angular.module("worldcupApp", [
 	"ngRoute",
 	"appRoutes",
-	"HomeCtrl",
-	"AllCtrl",
-	"NewCtrl",
-	//"SingleCtrl",
+	"homeCtrl",
+	"allCtrl",
+	"newCtrl",
+	//"singleCtrl",
 	"nationService",
 	"scheduleService",
 	"bracketService"
