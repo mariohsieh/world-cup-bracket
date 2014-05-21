@@ -254,9 +254,7 @@ hr {
 
 #singleKO img {
 	display: block;
-	width: 50px;
-	margin: 0px auto 5px;
-	
+	width: 51px;
 }
 
 #singleWinner h4 {
@@ -282,4 +280,16 @@ hr {
 #singleKO td {
 	padding: 0 10px;
 	vertical-align: middle;
+}
+
+.r16 img {
+	margin: 3px auto;
+}
+
+.qf img {
+	margin: 40px auto;	
+}
+
+.sf img {
+	margin: 102px auto;
 }

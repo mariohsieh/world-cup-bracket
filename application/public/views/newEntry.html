@@ -8,11 +8,25 @@
 	</article>
 </header>
 <section class="row" ng-show="tourneyStage == 'groupStage'"> <!-- group stage -->
-	<article class="overlayWrap" ng-show="showOverlay">
+	<article class="overlayWrap" ng-show="showOverlay"> <!-- nation details -->
 		<aside class="overlay">
 			<div class="btnDel pointer pull-right" ng-click="exitDetails()"></div>   
 			<section class="row">
-				<h3>{{details.name}}</h3>
+				<article class="col-lg-6">
+					<h2>{{details.name}}</h2>
+					<h4>Nickname: {{details.nickname}}</h4>
+					<h4>FIFA Ranking: {{details.ranking}}</h4>
+					<h4>Recent World Cup History:</h4>
+					<ul>
+						<li>2010: {{details.history.wc2010}}</li>
+						<li>2008: {{details.history.wc2006}}</li>
+						<li>2002: {{details.history.wc2002}}</li>
+						<li>Best: {{details.history.best}}</li>
+					</ul>
+				</article>
+				<article class="col-lg-6">
+					<img alt="{{team.name}}" src="../img/flags/{{details.code}}.png" />
+				</article>
 			</section>
 		</aside>
 	</article>
@@ -366,7 +380,7 @@
 	<div class="row"> <!-- championship game -->
 		<article class="col-xs-12 col-lg-3 col-lg-offset-1">
 			<img class="fFlag" alt="{{picks.ko.F1.name}}" src="../img/flags/{{picks.ko.F1.code}}.png" />
-			<h2 class="fTeamDisplay pointer" ng-click="selectWinner('F1', 'CHAMPS')">{{picks.ko.F1.name}}</h2>
+			<h2 class="fTeamDisplay pointer text-center" ng-click="selectWinner('F1', 'CHAMPS')">{{picks.ko.F1.name}}</h2>
 		</article>
 		<article class="col-xs-4">
 			<!-- user chooses winner and score/options-->
@@ -402,7 +416,7 @@
 		</article>
 		<article class="col-xs-4 col-lg-3">
 			<img class="fFlag" alt="{{picks.ko.F2.name}}" src="../img/flags/{{picks.ko.F2.code}}.png" />
-			<h2 class="fTeamDisplay pointer" ng-click="selectWinner('F2', 'CHAMPS')">{{picks.ko.F2.name}}</h2>
+			<h2 class="fTeamDisplay pointer text-center" ng-click="selectWinner('F2', 'CHAMPS')">{{picks.ko.F2.name}}</h2>
 		</article>
 	</div>
 </section>

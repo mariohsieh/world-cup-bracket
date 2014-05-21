@@ -257,6 +257,10 @@ angular.module("newCtrl", [])
 					$scope.thirdPlaceB = $scope.picks.ko.SF4;
 				else
 					$scope.thirdPlaceB = $scope.picks.ko.SF3;
+				
+				// call helper function to remove team in further placement
+				if (str1 != str2) 
+					clearKO(str1);
 										
 			} else if ($scope.tourneyStage == "finalsStage") {
 				
@@ -264,6 +268,69 @@ angular.module("newCtrl", [])
 				$scope.picks["finals"][str2] = $scope.picks["ko"][str1];
 			}
 		}
+
+		function clearKO(str) {
+			switch (str) {
+				case 'A1':
+				case 'B2':
+				case 'C1':
+				case 'D2':
+					//if (str != $scope.picks.ko.QF1)
+					delete $scope.picks.ko.SF1;
+					//if (str != $scope.picks.ko.SF1)
+					delete $scope.picks.ko.F1;
+					break;
+				case 'E1':
+				case 'F2':
+				case 'G1':
+				case 'H2':
+					//if (str != $scope.picks.ko.QF1)
+						delete $scope.picks.ko.SF2;
+					//if (str != $scope.picks.ko.SF1)
+						delete $scope.picks.ko.F1;
+					break;
+				case 'B1':
+				case 'A2':
+				case 'D1':
+				case 'C2':
+					//if (str != $scope.picks.ko.QF1)
+					delete $scope.picks.ko.SF3;
+					//if (str != $scope.picks.ko.SF1)
+					delete $scope.picks.ko.F2;
+					break;
+				case 'F1':
+				case 'E2':
+				case 'H1':
+				case 'G2':
+					//if (str != $scope.picks.ko.QF1)
+					delete $scope.picks.ko.SF4;
+					//if (str != $scope.picks.ko.SF1)
+					delete $scope.picks.ko.F2;												
+					break;
+				case 'QF1':
+				case 'QF2':
+				case 'QF3':
+				case 'QF4':
+					delete $scope.picks.ko.F1;
+					break;				
+				case 'QF5':
+				case 'QF6':
+				case 'QF7':
+				case 'QF8':
+					delete $scope.picks.ko.F2;
+					break;					
+				default :
+			}
+			
+			if (str != $scope.picks.finals.THIRD)
+				delete $scope.picks.finals.THIRD;
+			if (str != $scope.picks.finals.SECOND)
+				delete $scope.picks.finals.SECOND;	
+			if (str != $scope.picks.finals.CHAMPS)
+				delete $scope.picks.finals.CHAMPS;
+				
+		}
+
 
 		// submit the new bracket
 		$scope.createBracket = function() {
