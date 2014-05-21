@@ -97,12 +97,42 @@ li {
 	z-index: 60;	
 }
 
+/***** index page *****/
+#mainNav {
+	background-color: rgb(0, 168,89);
+	border-bottom: none;
+	box-shadow: 0 2px 10px #333;
+}
+
+#mainNav a {
+	color: rgb(255,204,41);
+}
+
+#map-canvas {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
 
 /***** group stage *****/
 .gLetter {
-	background-color: #C8C8C8;
+	background-color: rgb(255,204,41);
+	color: rgb(0, 168,89);
 	width: 10%;
 	font-size: 2.5em;
+}
+
+.gLetter:first-child {
+	border-radius: 5px 0 0 5px;
+}
+
+.gLetter:last-child {
+	border-radius: 0 5px 5px 0;
+}
+
+.gLetter:hover {
+	background-color: rgb(62,64,149);
+	color: rgb(255,204,41);
 }
 
 .gItem {
