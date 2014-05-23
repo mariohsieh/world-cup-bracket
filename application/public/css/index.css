@@ -144,6 +144,29 @@ li {
 }
 
 /***** group stage *****/
+#groupStage article:nth-child(2) {
+	margin-bottom: 20px;
+}
+
+#groupStage article:nth-child(3), #groupStage article:nth-child(5) {
+	margin-top: 10px;
+}
+
+#groupStage h2 {
+	padding: 0 10px;
+	background-color: rgb(62,64,149);
+	color: rgb(255,204,41);
+}
+
+#groupStage article:nth-child(3) table {
+	margin: 0 2%;
+	width: 96%;
+}
+
+#groupStage article:nth-child(3) th {
+	width: 33%;
+}
+
 .gLetter {
 	background-color: rgb(255,204,41);
 	color: rgb(0, 168,89);
@@ -165,14 +188,16 @@ li {
 }
 
 .gItem {
-	/*margin: 40px 0px;*/
+	margin: 10px 0px;
 	padding: 0px 0px 0px 10px;
-	
 	height: auto;
 	line-height: auto;	
 	vertical-align: middle;
 }
-
+	.gItem i {
+		margin: 17px 0;
+	}
+	
 .gNameDisplay {
 	font-size: 2.0em;
 }

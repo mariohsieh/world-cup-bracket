@@ -7,7 +7,7 @@
 		</div>
 	</article>
 </header>
-<section class="row" ng-show="tourneyStage == 'groupStage'"> <!-- group stage -->
+<section id="groupStage" class="row" ng-show="tourneyStage == 'groupStage'"> <!-- group stage -->
 	<article class="overlayWrap" ng-show="showOverlay"> <!-- nation details -->
 		<aside class="overlay">
 			<div class="btnDel pointer pull-right" ng-click="exitDetails()"></div>   
@@ -38,7 +38,7 @@
 	</article>
 	<article class="col-xs-12 col-lg-3 col-lg-offset-1"> <!-- group schedule -->
 		<!-- list group schedule here -->
-		<h3>Group {{groupLetter}} Schedule</h3>
+		<h2>Group {{groupLetter}} Schedule</h2>
 		<table>
 			<thead>
 				<tr>
@@ -64,7 +64,8 @@
 					<img class="gFlag" alt="{{team.name}}" src="../img/flags/{{team.code}}.png" />
 					{{team.name}}
 				</span>
-				<span class="pointer pull-right" ng-click="moreInfo(team)">more info</span>
+				<!--<span class="pointer pull-right" ng-click="moreInfo(team)">more info</span>-->
+				<i class="fa fa-info-circle fa-lg pointer pull-right" ng-click="moreInfo(team)"></i>
 <!--				
 				<h2 ng-click="">
 					<img src="../img/flags/{{team.code}}.png" />{{ team.name }}
@@ -75,7 +76,7 @@
 	</article>
 	<article class="col-xs-12 col-lg-3 text-right"> <!-- display group winners -->
 		<!-- list winners here -->
-		<h3>Group {{groupLetter}} Winners</h3>
+		<h2>Group {{groupLetter}} Winners</h2>
 		<ul>
 			<!-- <li ng-show="!gfirst">First Place</li> -->
 			<li><h3>{{gfirst}}</h3></li>
