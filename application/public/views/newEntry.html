@@ -30,10 +30,10 @@
 			</section>
 		</aside>
 	</article>
-	<article class="col-xs-12 col-lg-8 col-lg-offset-2"> <!-- group letter display -->
-		<ul class="">
+	<article id="groupLetter" class="col-xs-12 col-lg-8 col-lg-offset-2"> <!-- group letter display -->
+		<ul class="{{groupLetter}}">
 			<!-- list groups here -->
-			<li class="inlineBlock gLetter text-center pointer" id="{{group}}" ng-repeat="group in groups" ng-click="selectGroup(group);groupLetter=(group)">{{group}}</li>
+			<li class="inlineBlock gLetter text-center pointer" id="{{group}}" ng-repeat="group in groups" ng-click="selectGroup(group)">{{group}}</li>
 		</ul>	
 	</article>
 	<article class="col-xs-12 col-lg-3 col-lg-offset-1"> <!-- group schedule -->

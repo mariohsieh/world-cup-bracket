@@ -136,7 +136,7 @@ angular.module("newCtrl", [])
 				}
 			}
 
-			$scope.groupLetter = str;						
+			$scope.groupLetter = str;					
 			//$scope.teams = $scope.nations.getGroup(str);
 			$scope.teams = filterGroup(Nations,str);
 			//console.log($scope.teams);
@@ -151,6 +151,9 @@ angular.module("newCtrl", [])
 				$scope.gsecond = picks[str+2]["name"];
 			else
 				$scope.gsecond = secondPlace;
+				
+			// update indicator of group
+			//$scope.activeGroup = str;
 		}
 
 		$scope.moreInfo = function(data) {
