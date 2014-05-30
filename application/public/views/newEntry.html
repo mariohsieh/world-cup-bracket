@@ -2,8 +2,8 @@
 	<article class="pageWrap col-xs-12 col-lg-8 col-lg-offset-2">
 		<span class="pageTitle">{{heading}}</span>&nbsp;<span class="pageDescription">{{description}}</span>
 		<div class="stageNavWrap pull-right">
-			<button class="pull-left" ng-show="tourneyStage != 'groupStage'" ng-click="stageNav('Back')">Back</button>
-			<button class="pull-right" ng-show="stageNavCheck()" ng-click="stageNav('Next')">Next</button>
+			<i class="pull-left pointer fa fa-chevron-circle-left" ng-show="tourneyStage != 'groupStage'" ng-click="stageNav('Back')"></i>
+			<i class="pull-right pointer fa fa-chevron-circle-right" ng-show="stageNavCheck()" ng-click="stageNav('Next')"></i>			
 		</div>
 	</article>
 </header>
@@ -82,7 +82,8 @@
 			<li><h3 class="{{chosen1}}">{{gfirst}}</h3></li>
 			<li><h3 class="{{chosen2}}">{{gsecond}}</h3></li>
 			<!--<li ng-show="gfirst != 'First Place'" ng-click="clearWinners(groupLetter)"><h4 class="pointer">Clear</h4></li>-->
-			<li><button class="{{disableToggle}}" ng-click="clearWinners(groupLetter)" ng-disabled="gfirst == 'First Place'">Clear</button></li>
+			<!--<li><button class="{{disableToggle}}" ng-click="clearWinners(groupLetter)" ng-disabled="gfirst == 'First Place'">Clear</button></li>-->
+			<li><i class="pointer fa fa-eraser {{disableToggle}}" ng-click="clearWinners(groupLetter)" ng-disabled="gfirst == 'First Place'"></i></li>
 		</ul>
 	</article> 
 </section>

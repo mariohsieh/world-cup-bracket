@@ -56,7 +56,15 @@ li {
 }
 
 .stageNavWrap {
-	width: 200px;
+	width: 80px;
+}
+
+.stageNavWrap i {
+	color: rgb(62,64,149);
+}
+
+.stageNavWrap i:hover {
+	color: rgb(0, 168,89);
 }
 
 .middle {
@@ -254,6 +262,17 @@ li {
 	color: rgb(255,204,41);
 }
 
+.fa-eraser {
+	padding: 10px;
+	border-radius: 100%;
+	background-color: rgb(255,204,41);
+	color: rgb(62,64,149);
+}
+
+/*.fa-eraser:hover {
+	background-color: rgb(62,64,149);
+	color: rgb(255,204,41);
+}*/
 
 /***** ko stage *****/
 .roundDisplayWrap {
@@ -373,6 +392,10 @@ hr {
 
 
 /***** all brackets *****/
+#displayBrackets table {
+	width: 100%;
+}
+
 #displayBrackets thead tr {
 	background-color: rgb(62,64,149);
 	color: rgb(255,204,41);
