@@ -1,0 +1,161 @@
+<header class="row"> <!-- Page title & description -->
+	<article class="pageWrap col-xs-12 col-lg-8 col-lg-offset-2">
+		<span class="pageTitle">{{heading}}</span>&nbsp;<span class="pageDescription">{{description}}</span>		
+<!--
+		<div class="pull-right">
+			<span class="pointer pull-left">&#60;</span>
+			<span class="pointer pull-right" >&#62;</span>
+			<i class="fa fa-chveron-circle-left"></i>
+			<i class="fa fa-chveron-circle-right"></i>
+		</div>
+-->
+	</article>
+</header>
+<section class="row">
+	<article class="overlayWrap" ng-show="showOverlay">
+		<aside id="singleWrap" class="overlay">
+			<!-- delete button in top right corner -->
+			<div class="btnDel pointer pull-right" ng-click="exitSingle()"></div>
+			<section class="row">
+				<div class="col-xs-12">
+					<h2>Bracket Name: {{single.name}}</h2>
+				</div>
+			</section>
+			<section class="row text-center"> <!-- finals display -->
+				<div class="col-xs-4">
+					<h4><strong>Runner-up:</strong></h4>
+					<img class="gFlag" alt="{{single.finals.SECOND.name}}" src="../img/flags/{{single.finals.SECOND.code}}.png" />
+					<h5>{{single.finals.SECOND.name}}</h5>
+				</div>
+				<div id="singleWinner" class="col-xs-4">
+					<h4><strong>Champions:</strong></h4>
+					<img style="width: 100px;" alt="{{single.finals.CHAMPS.name}}" src="../img/flags/{{single.finals.CHAMPS.code}}.png" />
+					<h4>{{single.finals.CHAMPS.name}}</h4>
+				</div>
+				<div class="col-xs-4">
+					<h4><strong>Third Place:</strong></h4>
+					<img class="gFlag" alt="{{single.finals.THIRD.name}}" src="../img/flags/{{single.finals.THIRD.code}}.png" />
+					<h5>{{single.finals.THIRD.name}}</h5>			
+				</div>
+			</section>
+			<section id="singleKO" class="row"> <!-- ko display -->
+				<article class="col-lg-2 r16">
+					<span class="text-center">Group A</span>
+					<img alt="{{single.group.A1.name}}" src="../img/flags/{{single.group.A1.code}}.png" />
+					<img alt="{{single.group.A2.name}}" src="../img/flags/{{single.group.A2.code}}.png" />
+					<span>Group B</span>
+					<img alt="{{single.group.B1.name}}" src="../img/flags/{{single.group.B1.code}}.png" />
+					<img alt="{{single.group.B2.name}}" src="../img/flags/{{single.group.B2.code}}.png" />
+					<span>Group C</span>
+					<img alt="{{single.group.C1.name}}" src="../img/flags/{{single.group.C1.code}}.png" />
+					<img alt="{{single.group.C2.name}}" src="../img/flags/{{single.group.C2.code}}.png" />
+					<span>Group D</span>
+					<img alt="{{single.group.D1.name}}" src="../img/flags/{{single.group.D1.code}}.png" />
+					<img alt="{{single.group.D2.name}}" src="../img/flags/{{single.group.D2.code}}.png" />
+				</article>
+				<article class="col-lg-2 r16">
+					<span>Group E</span>
+					<img alt="{{single.group.E1.name}}" src="../img/flags/{{single.group.E1.code}}.png" />
+					<img alt="{{single.group.E2.name}}" src="../img/flags/{{single.group.E2.code}}.png" />
+					<span>Group F</span>
+					<img alt="{{single.group.F1.name}}" src="../img/flags/{{single.group.F1.code}}.png" />
+					<img alt="{{single.group.F2.name}}" src="../img/flags/{{single.group.F2.code}}.png" />
+					<span>Group G</span>
+					<img alt="{{single.group.G1.name}}" src="../img/flags/{{single.group.G1.code}}.png" />
+					<img alt="{{single.group.G2.name}}" src="../img/flags/{{single.group.G2.code}}.png" />
+					<span>Group H</span>
+					<img alt="{{single.group.H1.name}}" src="../img/flags/{{single.group.H1.code}}.png" />
+					<img alt="{{single.group.H2.name}}" src="../img/flags/{{single.group.H2.code}}.png" />
+				</article>				
+				<article class="col-lg-8">
+					<table class="text-center">
+						<thead>
+							<tr>
+								<th class="text-center">16</th>
+								<th class="text-center">QF</th>
+								<th class="text-center">SF</th>
+								<th colspan="2" class="text-center">Finals</th>
+								<th class="text-center">SF</th>
+								<th class="text-center">QF</th>
+								<th class="text-center">16</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="r16">
+									<img alt="{{single.group.A1.name}}" src="../img/flags/{{single.group.A1.code}}.png" />
+									<img alt="{{single.group.B2.name}}" src="../img/flags/{{single.group.B2.code}}.png" />
+									<img alt="{{single.group.C1.name}}" src="../img/flags/{{single.group.C1.code}}.png" />
+									<img alt="{{single.group.D2.name}}" src="../img/flags/{{single.group.D2.code}}.png" />
+									<img alt="{{single.group.E1.name}}" src="../img/flags/{{single.group.E1.code}}.png" />
+									<img alt="{{single.group.F2.name}}" src="../img/flags/{{single.group.F2.code}}.png" />
+									<img alt="{{single.group.G1.name}}" src="../img/flags/{{single.group.G1.code}}.png" />
+									<img alt="{{single.group.H2.name}}" src="../img/flags/{{single.group.H2.code}}.png" />								
+								</td>
+								<td class="qf">
+									<img alt="{{single.ko.QF1.name}}" src="../img/flags/{{single.ko.QF1.code}}.png" />
+									<img alt="{{single.ko.QF2.name}}" src="../img/flags/{{single.ko.QF2.code}}.png" />
+									<img alt="{{single.ko.QF3.name}}" src="../img/flags/{{single.ko.QF3.code}}.png" />
+									<img alt="{{single.ko.QF4.name}}" src="../img/flags/{{single.ko.QF4.code}}.png" />								
+								</td>
+								<td class="sf">
+									<img alt="{{single.ko.SF1.name}}" src="../img/flags/{{single.ko.SF1.code}}.png" />
+									<img alt="{{single.ko.SF2.name}}" src="../img/flags/{{single.ko.SF2.code}}.png" />
+								</td>
+								<td>
+									<img alt="{{single.ko.F1.name}}" src="../img/flags/{{single.ko.F1.code}}.png" />
+								</td>
+								<td>
+									<img alt="{{single.ko.F2.name}}" src="../img/flags/{{single.ko.F2.code}}.png" />
+								</td>
+								<td class="sf">
+									<img alt="{{single.ko.SF3.name}}" src="../img/flags/{{single.ko.SF3.code}}.png" />
+									<img alt="{{single.ko.SF4.name}}" src="../img/flags/{{single.ko.SF4.code}}.png" />
+								</td>
+								<td class="qf">
+									<img alt="{{single.ko.QF5.name}}" src="../img/flags/{{single.ko.QF5.code}}.png" />
+									<img alt="{{single.ko.QF6.name}}" src="../img/flags/{{single.ko.QF6.code}}.png" />
+									<img alt="{{single.ko.QF7.name}}" src="../img/flags/{{single.ko.QF7.code}}.png" />
+									<img alt="{{single.ko.QF8.name}}" src="../img/flags/{{single.ko.QF8.code}}.png" />
+								</td>
+								<td class="r16">
+									<img alt="{{single.group.B1.name}}" src="../img/flags/{{single.group.B1.code}}.png" />
+									<img alt="{{single.group.A2.name}}" src="../img/flags/{{single.group.A2.code}}.png" />
+									<img alt="{{single.group.D1.name}}" src="../img/flags/{{single.group.D1.code}}.png" />
+									<img alt="{{single.group.C2.name}}" src="../img/flags/{{single.group.C2.code}}.png" />
+									<img alt="{{single.group.F1.name}}" src="../img/flags/{{single.group.F1.code}}.png" />
+									<img alt="{{single.group.E2.name}}" src="../img/flags/{{single.group.E2.code}}.png" />
+									<img alt="{{single.group.H1.name}}" src="../img/flags/{{single.group.H1.code}}.png" />
+									<img alt="{{single.group.G2.name}}" src="../img/flags/{{single.group.G2.code}}.png" />
+								</td>
+							</tr>
+						</tbody>				
+					</table>
+				</article>					
+			</section>
+		</aside>
+	</article>
+	<article id="displayBrackets" class="col-xs-12 col-lg-10 col-lg-offset-1">
+		<table class="col-xs-12">
+			<thead>
+				<tr>
+					<th>Bracket Name</th>
+					<th class="text-center">Champions</th>
+					<th class="text-center">Runner-up</th>
+					<th class="text-center">Third Place</th>
+					<th class="text-right">Date Added</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- ng-repeat the rows -->
+				<tr class="pointer" ng-repeat="bracket in brackets" ng-click="viewSingle(bracket)">
+					<td>{{bracket.name}}</td>
+					<td class="text-center">{{bracket.finals.CHAMPS.name}}</td>
+					<td class="text-center">{{bracket.finals.SECOND.name}}</td>
+					<td class="text-center">{{bracket.finals.THIRD.name}}</td>
+					<td class="text-right">{{bracket.date}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</article>
+</section>

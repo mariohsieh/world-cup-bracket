@@ -1,0 +1,81 @@
+2014 world cup bracket notes
+**********************************
+
+32 nations
+
+8 groups
+
+top two countries from each group move on to round of 16
+
+65 total matches
+
+
+model:
+db named "worldcup":
+	two tables
+	-"nations" - all countries
+		-id
+		-country code
+		-name
+		-nickname
+		-fifaRanking
+		-bestFinish
+		-2010
+		-2006
+		-2002
+	-'brackets" - submitted brackets
+		-id
+		-name
+		-team
+		-score
+		-created_at
+		
+
+controller:
+	-
+	-
+
+view:
+	welcome/landing page
+		-explains the scoring system
+	group stage
+		(use angular-ui for sorting)
+		-pick two winners from each group
+
+		-details page:
+			-Country Flag
+			-Association emblem
+			-team nickname (ie: brasil is el selecao)
+			-FIFA ranking (as of YYYY/MM/DD)
+			-have a history of last 5 w.c performances
+			-best finish
+
+	knockout stage
+		(use directives for selecting winners)
+		-fill out round of 16 to champion
+		-choose score for title game
+			-bonus:  add options for A.E.T, penalty shootout, etc
+
+	confirm page
+		-prompt confirmation or link back to edit bracket
+
+	leaderboard page
+		-display all submitted brackets and leaders
+		-need to write algorithm for determining point score
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+

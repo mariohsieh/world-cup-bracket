@@ -1,0 +1,19 @@
+{
+	"name": "world-cup-bracket-app",
+	"description": "a pick 'em tournament bracket for the 2014 world cup",
+	"author": "mario hsieh <mariohsieh@gmail.com>",
+	"private": true,
+	"version": "0.0.1",
+	"repository": {
+		"type": "git",
+		"url": "http://github.com/mariohsieh/world-cup-bracket.git"
+	},
+	"main": "server.js",
+	"dependencies": {
+		"express": "latest",
+		"swig": "latest",
+		"consolidate" : "latest",
+		"mongodb": "latest",
+		"mongoose": "latest"
+	}
+}

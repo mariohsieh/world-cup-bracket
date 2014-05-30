@@ -1,0 +1,460 @@
+/* resets */
+html, body, ul, li {
+	margin: 0px;
+	padding: 0px;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* single tags*/
+h1, h2, h3 {
+	margin: 20px 0px;
+}
+
+li {
+	list-style: none;
+}
+
+
+/**** class definitions ****/
+/* effects */
+.pointer {
+	cursor: pointer;
+}
+
+.inlineBlock {
+	display: inline-block;
+}
+
+.disabled {
+	opacity: 0.5;
+}
+
+/* layout */
+.container-fluid {
+	padding-top: 55px;
+}
+
+.pageWrap {
+	/*margin: 20px auto;*/
+	padding: 15px;
+	font-size: 2.3em;
+}
+
+.pageTitle {
+	font-size: 1.2em;
+	font-variant: small-caps;
+	font-weight: bold;
+}
+
+.pageDescription {
+	font-size: .5em;
+	font-style: italic;
+	vertical-align: middle;
+}
+
+.stageNavWrap {
+	width: 80px;
+}
+
+.stageNavWrap i {
+	color: rgb(62,64,149);
+}
+
+.stageNavWrap i:hover {
+	color: rgb(0, 168,89);
+}
+
+.middle {
+	vertical-align: middle;
+}
+
+.overlayWrap {
+	position: absolute;
+	top: 75px;
+	left: 12.5%;
+	right: 12.5%;
+	height: 90%;
+	min-height: 675px;
+	width:  75%;
+	z-index: 50;	
+}
+
+.btnDel {
+	position: relative;
+	width: 30px;
+	height: 30px;
+	border-radius: 100%;
+	margin-top: -23px;
+	margin-right: -40px;
+	border: 3px solid green;
+	background-color: red;
+	z-index: 70;
+}
+
+.overlay {
+	background-color: rgba(0,0,0,.85);
+	height: 90%;
+	width:  90%;
+	margin:  0 auto;
+	padding: 10px 25px 20px;
+	color: #FFFFFF;
+	border-radius: 20px;
+	z-index: 60;	
+}
+
+/***** index page *****/
+#mainNav {
+	background-color: rgb(0, 168,89);
+	border-bottom: none;
+	box-shadow: 0 2px 10px #333;
+}
+
+#mainNav a {
+	color: rgb(255,204,41);
+}
+
+#map-canvas {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+
+/***** landing page *****/
+#landingPage {
+	margin-top: 50px;
+}
+
+#landingPage div:first-child {
+	background-color: rgba(255,204,41,.75);
+	border: 5px solid rgb(62,64,149);
+	width: 100%;
+	height: 300px;
+	padding: 5px 10px;
+	color: rgb(62,64,149);
+	border-radius: 5px;
+	box-shadow: 0px 5px 5px #A8A8A8;
+}
+
+#landingPage img {
+	width: 100%;
+}
+
+#landingPage div {
+	display: inline-block;
+	height: 40px;
+	width: 120px;
+	background-color: red;
+	border-radius: 5px;
+	box-shadow: 0px 5px 5px #A8A8A8;
+}
+
+/***** group stage *****/
+#groupStage article:nth-child(2) {
+	margin-bottom: 20px;
+}
+
+#groupStage article:nth-child(3), #groupStage article:nth-child(5) {
+	margin-top: 10px;
+}
+
+#groupStage h2 {
+	margin-bottom: 0px;
+	padding: 5px 10px;
+	background-color: rgb(62,64,149);
+	color: rgb(255,204,41);
+}
+
+#groupStage article:nth-child(3) table {
+	margin: 0 2%;
+	width: 96%;
+	background-image: linear-gradient(to left, rgba(255,255,255,.5), rgba(255,255,255,.3));
+	box-shadow: 0px 5px 5px #A8A8A8;
+}
+
+#groupStage article:nth-child(3) th {
+	width: 33%;
+	padding: 10px 5px 0;
+}
+
+#groupStage article:nth-child(3) td {
+	padding: 0 5px;
+}
+
+#groupStage article:nth-child(3) td:nth-child(2) {
+	text-transform: uppercase;
+}
+
+#groupStage article:nth-child(4) {
+	background-image: linear-gradient(to top, rgba(255,255,255,.5), rgba(255,255,255,.3));
+	box-shadow: 0px 5px 5px #A8A8A8; 
+	
+}
+
+#groupStage article:nth-child(5) ul {
+	margin: 0 2%;
+	width: 96%;
+	padding: 10px 5px;
+	background-image: linear-gradient(to right, rgba(255,255,255,.5), rgba(255,255,255,.3));
+	box-shadow: 0px 5px 5px #A8A8A8; 
+}
+
+.gLetter {
+	background-color: rgb(255,204,41);
+	color: rgb(0, 168,89);
+	width: 10%;
+	font-size: 2.5em;
+}
+
+.gLetter:first-child {
+	border-radius: 5px 0 0 5px;
+}
+
+.gLetter:last-child {
+	border-radius: 0 5px 5px 0;
+}
+
+#groupLetter ul {
+	box-shadow: 0 5px 5px #A8A8A8;
+}
+
+.gLetter:hover,
+#groupLetter .A #A,
+#groupLetter .B #B,
+#groupLetter .C #C,
+#groupLetter .D #D,
+#groupLetter .E #E,
+#groupLetter .F #F,
+#groupLetter .G #G,
+#groupLetter .H #H {
+	background-color: rgb(62,64,149);
+	color: rgb(255,204,41); 
+}
+
+.gItem {
+	margin: 10px 0px;
+	padding: 0px 0px 0px 10px;
+	height: auto;
+	line-height: auto;	
+	vertical-align: middle;
+}
+	.gItem i {
+		margin: 17px 0;
+	}
+	
+.gNameDisplay {
+	font-size: 2.0em;
+}
+
+.gFlag {
+	width: 75px;
+}
+
+/* details */
+.dFlag {
+	
+}
+
+.picked {
+	background-color: rgb(0, 168,89);
+	color: rgb(255,204,41);
+}
+
+.fa-eraser {
+	padding: 10px;
+	border-radius: 100%;
+	background-color: rgb(255,204,41);
+	color: rgb(62,64,149);
+}
+
+/*.fa-eraser:hover {
+	background-color: rgb(62,64,149);
+	color: rgb(255,204,41);
+}*/
+
+/***** ko stage *****/
+.roundDisplayWrap {
+	width: 100%;
+}
+.roundDisplayWrap li {
+	font-size: 1.2em;
+	font-weight: bold;
+	width: 150px;
+	display: inline-block;
+}
+
+.bracketWrap {
+	width: 860px;
+	height: 600px;
+	display: inline-block;
+}
+
+.indication {
+	width: 250px;
+	height: 640px;
+	line-height: 40em;
+	display: inline-block;
+}
+
+.bracketBottomLine {
+	border-bottom: 1px solid #000000;
+}
+
+.bracketLeftLine {
+	border-left: 1px solid #000000;
+}
+
+.bracketRightLine {
+	border-right: 1px solid #000000;
+}
+
+.arrow {
+	font-size: 10em;
+}
+
+/* rounds layout */
+#koRoundDisplay {
+	margin-bottom: 10px;
+}
+
+.roundFinalsWrap {
+	height: 360px;
+	width: 600px;
+}
+
+.roundSemiWrap {
+	height: 180px;
+	width: 450px;
+}
+
+.roundQuarterWrap {
+	height: 90px;
+	width: 300px;
+}
+
+.roundSweetWrap {
+	height: 45px;
+	width: 150px;
+}
+
+/* team display */
+.winnersLine {
+	height: inherit;
+	width: 150px;
+}
+
+.sweetsixteen img{
+	line-height: 1em;
+}
+
+.quarterfinals {
+	line-height: 8em;
+}
+
+.semifinals {
+	line-height: 19em;
+}
+
+.finals {
+	line-height: 41em;
+}
+
+.teamDisplay {
+	font-size: .8em;
+	cursor: pointer;
+}
+
+.kFlag {
+	width: 60px;
+	cursor: pointer;
+}
+
+/***** finals stage *****/
+.fFlag {
+	width: 100%;
+}
+
+.fTeamDisplay {
+	font-size: 2em;
+}
+
+hr {
+	border-top: 3px solid black;
+}
+
+.fScore {
+	font-size: 3em;
+	width: 75px;
+	height: 75px;
+}
+
+
+/***** all brackets *****/
+#displayBrackets table {
+	width: 100%;
+}
+
+#displayBrackets thead tr {
+	background-color: rgb(62,64,149);
+	color: rgb(255,204,41);
+
+}
+
+#displayBrackets th {
+	padding: 5px;
+	font-size: 1.2em;
+}
+	
+#displayBrackets td {
+	padding: 5px 8px;
+}	
+	
+	
+/***** single bracket *****/
+#singleWrap h2 {
+	margin: 10px auto;
+}
+
+#singleKO img {
+	display: block;
+	width: 51px;
+}
+
+#singleWinner h4 {
+	font-size: 1.4em;
+	margin-top: 5px;
+}
+
+#singleKO article {
+	height: 400px;
+}
+
+#singleKO span {
+	display: block;
+	text-decoration: underline;
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+}
+
+#singleKO table {
+	margin: 0 auto;
+}
+#singleKO td {
+	padding: 0 10px;
+	vertical-align: middle;
+}
+
+.r16 img {
+	margin: 3px auto;
+}
+
+.qf img {
+	margin: 40px auto;	
+}
+
+.sf img {
+	margin: 102px auto;
+}

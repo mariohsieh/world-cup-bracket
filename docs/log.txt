@@ -1,0 +1,8 @@
+2014.04.02
+******************
+
+filters, how to use them with array (ie, nations model);
+
+research angular function to replace classes
+egghead.io videos
+
