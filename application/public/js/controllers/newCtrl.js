@@ -59,7 +59,9 @@ angular.module("newCtrl", [])
 			secondPlace = "Second Place";
 			$scope.gfirst = firstPlace;
 			$scope.gsecond = secondPlace;
-			
+			$scope.chosen1 = "";
+			$scope.chosen2 = "";
+						
 			// set rounds for knockout stage header
 			$scope.rounds = ["Sweet Sixteen", "Quarter-Finals", "Semi-Finals", "Finals"];
 
@@ -143,15 +145,21 @@ angular.module("newCtrl", [])
 			$scope.games = filterGroup(Schedule,str);
 
 			// update group winners if set
-			if (picks[str+1])
+			if (picks[str+1]) {
 				$scope.gfirst = picks[str+1]["name"];
-			else
+				$scope.chosen1 = "picked";
+			} else {
 				$scope.gfirst =  firstPlace;
-			if (picks[str+2])
+				$scope.chosen1 = "";
+			}
+			
+			if (picks[str+2]) {
 				$scope.gsecond = picks[str+2]["name"];
-			else
+				$scope.chosen2 = "picked";
+			} else {
 				$scope.gsecond = secondPlace;
-				
+				$scope.chosen2 = "";
+			}	
 			// update indicator of group
 			//$scope.activeGroup = str;
 		}
@@ -172,9 +180,11 @@ angular.module("newCtrl", [])
 			if (!picks[obj.group+1]) {	// if pick 1 not set
 				picks[obj.group+1] = {"code": obj.code, "name": obj.name};
 				$scope.gfirst = obj.name;
+				$scope.chosen1 = "picked";
 			} else if (obj.code != picks[obj.group+1]["code"] && !picks[obj.group+2]) { // pick 2 is blank and picked team is not pick 1
 				picks[obj.group+2] = {"code": obj.code, "name": obj.name};
 				$scope.gsecond = obj.name;
+				$scope.chosen2 = "picked";	
 			}
 			//console.log(Object.keys(picks).length);
 			//$scope.koStageCheck();
@@ -186,8 +196,10 @@ angular.module("newCtrl", [])
 			//console.log(str);
 			$scope.gfirst = firstPlace;
 			delete picks[str+1];
+			$scope.chosen1 = "";	
 			$scope.gsecond = secondPlace;
 			delete picks[str+2];
+			$scope.chosen2 = "";	
 			//console.log(picks);
 			$scope.disableToggle = "disabled";
 		}

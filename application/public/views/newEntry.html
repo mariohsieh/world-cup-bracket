@@ -13,7 +13,7 @@
 			<div class="btnDel pointer pull-right" ng-click="exitDetails()"></div>   
 			<section class="row">
 				<article class="col-lg-6">
-					<h2>{{details.name}}</h2>
+					<h1>{{details.name}}</h1>
 					<h4>Nickname: {{details.nickname}}</h4>
 					<h4>FIFA Ranking: {{details.ranking}}</h4>
 					<h4>Recent World Cup History:</h4>
@@ -79,8 +79,8 @@
 		<h2>Group {{groupLetter}} Winners</h2>
 		<ul>
 			<!-- <li ng-show="!gfirst">First Place</li> -->
-			<li><h3>{{gfirst}}</h3></li>
-			<li><h3>{{gsecond}}</h3></li>
+			<li><h3 class="{{chosen1}}">{{gfirst}}</h3></li>
+			<li><h3 class="{{chosen2}}">{{gsecond}}</h3></li>
 			<!--<li ng-show="gfirst != 'First Place'" ng-click="clearWinners(groupLetter)"><h4 class="pointer">Clear</h4></li>-->
 			<li><button class="{{disableToggle}}" ng-click="clearWinners(groupLetter)" ng-disabled="gfirst == 'First Place'">Clear</button></li>
 		</ul>
