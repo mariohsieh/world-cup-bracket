@@ -148,9 +148,11 @@ angular.module("newCtrl", [])
 			if (picks[str+1]) {
 				$scope.gfirst = picks[str+1]["name"];
 				$scope.chosen1 = "picked";
+				$scope.disableToggle = "";
 			} else {
 				$scope.gfirst =  firstPlace;
 				$scope.chosen1 = "";
+				$scope.disableToggle = "disabled";
 			}
 			
 			if (picks[str+2]) {

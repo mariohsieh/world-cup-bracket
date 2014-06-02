@@ -10,7 +10,7 @@
 	},
 	"main": "server.js",
 	"dependencies": {
-		"express": "latest",
+		"express": "~3.x",
 		"swig": "latest",
 		"consolidate" : "latest",
 		"mongodb": "latest",
